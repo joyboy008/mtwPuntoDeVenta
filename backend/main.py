@@ -1,0 +1,43 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from db.database import engine, Base, get_db
+from routers import inventory, users, auth, clients, sales, chat, contact
+from fastapi.staticfiles import (
+    StaticFiles,
+)  # para poder compartir archivos staticos 1/2
+
+
+# pip install "fastapi[all]"
+# este comando es para instalar todas las dependencias
+
+# Iniciar el Server: uvicorn main:app --reload
+# Detener el server: ctrl+c
+
+# Url local: http://127.0.0.1:8000
+
+Base.metadata.create_all(bind=engine)
+
+app = FastAPI()
+origins = ["http://localhost:3000", "https://mtw.lat", "http://mtw.lat"]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Routers
+app.include_router(auth.router)
+app.include_router(chat.router)
+app.include_router(sales.router)
+app.include_router(clients.router)
+app.include_router(inventory.router)
+app.include_router(contact.router)
+app.include_router(users.router)  
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+@app.on_event("startup")
+def startup_event():
+    get_db()
