@@ -47,9 +47,10 @@ class JWTValidator(HTTPBearer):
         token_valido = False
         try:
             payload = jwt.decode(jwtoken, JWT_SECRET, algorithms=[JWT_ALGORITHM])
-        except Exception as error:
-            print(error)
-            payload = None
+        except jwt.ExpiredSignatureError:
+            raise HTTPException(status_code=401, detail="El token ha expirado")
+        except jwt.InvalidTokenError:
+            raise HTTPException(status_code=401, detail="El token no es válido")
         if payload:
             token_valido = True
 

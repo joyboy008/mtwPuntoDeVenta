@@ -1,4 +1,4 @@
-import time
+from datetime import datetime, timedelta
 from fastapi.exceptions import HTTPException
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
@@ -28,7 +28,8 @@ async def login(credenciales: Credentials, db: Session = Depends(get_db)) -> dic
         raise HTTPException(status_code=400, detail="Usuario o password incorrecto")
 
     # Generar el JWT token
-    payload = {"user_id": str(usuario_guardado.id), "expires": time.time() + 600}
+    expiration_time = datetime.utcnow() + timedelta(minutes=60)
+    payload = {"user_id": str(usuario_guardado.id), "exp": expiration_time,}
     token = jwt.encode(payload, JWT_SECRET, algorithm=JWT_ALGORITHM)
 
     return {

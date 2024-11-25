@@ -2,9 +2,25 @@ import axios from "axios";
 import { BASE_URL } from "./constants";
 import authProvider from "./AuthProvider";
 
+const axiosInstance = axios.create({
+  baseURL: BASE_URL,
+});
+
+axiosInstance.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      // Si el backend responde con 401, limpiar sesión y redirigir al login
+      authProvider.deleteSession();
+      window.location.href = "/login";
+    }
+    return Promise.reject(error);
+  }
+);
+
 const api = {
   login: (credentials) => {
-    return axios.post(`${BASE_URL}/auth/login`, credentials);
+    return axiosInstance.post(`${BASE_URL}/auth/login`, credentials);
   },
   crearData: (endpoint, data) => {
     const authHeaders = authProvider.getAuthHeaders();
@@ -12,7 +28,7 @@ const api = {
       ...authHeaders,
       "Content-Type": "application/json",
     };
-    return axios.post(`${BASE_URL}/${endpoint}/`, data, {
+    return axiosInstance.post(`${BASE_URL}/${endpoint}/`, data, {
       headers,
     });
   },
@@ -22,7 +38,7 @@ const api = {
       ...authHeaders,
       "Content-Type": "application/json",
     };
-    return axios.get(`${BASE_URL}/${endpoint}/${id}`, { headers });
+    return axiosInstance.get(`${BASE_URL}/${endpoint}/${id}`, { headers });
   },
   listarData: (endpoint) => {
     const authHeaders = authProvider.getAuthHeaders();
@@ -30,7 +46,7 @@ const api = {
       ...authHeaders,
       "Content-Type": "application/json",
     };
-    return axios.get(`${BASE_URL}/${endpoint}/`, {
+    return axiosInstance.get(`${BASE_URL}/${endpoint}/`, {
       headers,
     });
   },
@@ -40,7 +56,7 @@ const api = {
       ...authHeaders,
       "Content-Type": "application/json",
     };
-    return axios.put(`${BASE_URL}/${endpoint}/${id}`, data, {
+    return axiosInstance.put(`${BASE_URL}/${endpoint}/${id}`, data, {
       headers,
     });
   },
@@ -50,7 +66,7 @@ const api = {
       ...authHeaders,
       "Content-Type": "application/json",
     };
-    return axios.put(`${BASE_URL}/${endpoint}/${id}/desactivar`, {
+    return axiosInstance.put(`${BASE_URL}/${endpoint}/${id}/desactivar`, {
       headers,
     });
   },
@@ -60,7 +76,7 @@ const api = {
       ...authHeaders,
       "Content-Type": "application/json",
     };
-    return axios.delete(`${BASE_URL}/${endpoint}/${id}`, { headers });
+    return axiosInstance.delete(`${BASE_URL}/${endpoint}/${id}`, { headers });
   },
 };
 

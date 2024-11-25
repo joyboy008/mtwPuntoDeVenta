@@ -5,7 +5,9 @@
 /.pnp
 .pnp.js
 
+
 # Entorno virtual de Python
+/inventory.db
 *.env
 venv/
 __pycache__/
@@ -20,6 +22,7 @@ node_modules/
 
 # production
 /build
+/build/
 
 # misc
 .DS_Store
