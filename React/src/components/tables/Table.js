@@ -10,10 +10,12 @@ function Table({ title, onAddProduct, onAddClient, columns, data, whatIs }) {
       </section>
       <section className="table__body">
         <table>
-          <thead>
+          <thead className="table__head">
             <tr>
               {columns.map((column) => (
-                <th key={column.field}>{column.label}</th>
+                <th className={column.field} key={column.field}>
+                  {column.label}
+                </th>
               ))}
               <th>Acción</th>
             </tr>
