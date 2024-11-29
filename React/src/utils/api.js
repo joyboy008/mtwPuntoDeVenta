@@ -66,7 +66,7 @@ const api = {
       ...authHeaders,
       "Content-Type": "application/json",
     };
-    return axiosInstance.put(`${BASE_URL}/${endpoint}/${id}/desactivar`, {
+    return axiosInstance.put(`${BASE_URL}/${endpoint}/${id}/desactivar`, null, {
       headers,
     });
   },

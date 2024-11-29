@@ -3,6 +3,7 @@ import DefaulLayout from "../../components/DefaultLayout";
 import { useLoaderData } from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
 import FormularioVenta from "../../components/FormularioVenta";
+import api from "../../utils/api";
 
 function DetalleVenta() {
   const data = useLoaderData();
@@ -26,7 +27,6 @@ function DetalleVenta() {
       ) : (
         <FormularioVenta title={"Detalle de Venta"} data={ventaData} />
       )}
-      <br />
     </DefaulLayout>
   );
 }

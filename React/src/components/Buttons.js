@@ -21,6 +21,11 @@ function Buttons({ endpoint, data, whatIs, onAddProduct, onAddClient }) {
           <NavLink className="dropbtn succes" to={`/sales/${data}`}>
             Detalles
           </NavLink>
+          {authProvider.checkRoutePermissions("admin") ? (
+            <NavLink className="dropbtn danger" to={`/sales/delete/${data}`}>
+              Eliminar
+            </NavLink>
+          ) : null}
         </>
       );
     } else if (
@@ -86,22 +91,6 @@ function Buttons({ endpoint, data, whatIs, onAddProduct, onAddClient }) {
           >
             Eliminar
           </NavLink>
-        </>
-      );
-    } else if (
-      authProvider.checkRoutePermissions("moderador") &&
-      whatIs === "Ventas"
-    ) {
-      return (
-        <>
-          <NavLink className="dropbtn succes" to={`/sales/${data}`}>
-            Detalles
-          </NavLink>
-          {authProvider.checkRoutePermissions("admin") ? (
-            <NavLink className="dropbtn danger" to={`/sales/delete/${data}`}>
-              Eliminar
-            </NavLink>
-          ) : null}
         </>
       );
     }

@@ -2,9 +2,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from db.database import engine, Base, get_db
 from routers import inventory, users, auth, clients, sales, chat, contact
-from fastapi.staticfiles import (
-    StaticFiles,
-)  # para poder compartir archivos staticos 1/2
 
 
 # pip install "fastapi[all]"
@@ -36,7 +33,6 @@ app.include_router(inventory.router)
 app.include_router(contact.router)
 app.include_router(users.router)  
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.on_event("startup")
 def startup_event():

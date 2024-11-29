@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, Float, DateTime, ForeignKey, String
+from sqlalchemy import Column, Integer, Float, DateTime, ForeignKey, String, Boolean
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from ..database import Base
@@ -14,6 +14,7 @@ class Sale(Base):
     sale_details = Column(String)
     total = Column(Float)
     date = Column(DateTime, default=lambda: datetime.now(ZoneInfo.utc))
+    is_active = Column(Boolean, default=True)
 
     # Relación de muchos a muchos con productos a través de la tabla intermedia SaleProduct
     products = relationship("SaleProduct", back_populates="sale")

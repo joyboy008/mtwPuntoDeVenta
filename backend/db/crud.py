@@ -109,6 +109,7 @@ def get_sale_details(db: Session, sale_id: int):
     sale_details = {
         "id": sale.id,
     "client_name": client.name if client else "Cliente no encontrado",
+    "client_nit": client.nit if client else "Cliente no encontrado",
     "user_name": user.name if user else "Usuario no encontrado",
     "products": [
         {
@@ -119,6 +120,7 @@ def get_sale_details(db: Session, sale_id: int):
         for i in range(0, len(products), 2)
     ],
     "sale_details": sale.sale_details,
+    "is_active": sale.is_active,
     "total": sale.total,
 }
     return sale_details

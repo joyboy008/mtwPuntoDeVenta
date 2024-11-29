@@ -18,7 +18,17 @@ td {
 main.table {
     width: 82vw;
     height: 80vh;
-    min-height: 750px;
+    min-height: 650px;
+    background-color: #1a1a1a;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+    overflow: hidden;
+}
+
+.table__sale_details {
+    width: 100%;
+    color: #1a1a1a;
     background-color: #1a1a1a;
     backdrop-filter: blur(12px);
     box-shadow: 0 .4rem .8rem #0005;
@@ -144,5 +154,11 @@ thead th:hover {
 @media (max-width: 1000px) {
     td:not(:first-of-type) {
         min-width: 12.1rem;
+    }
+}
+
+@media (max-width: 500px) {
+    main.table__sale_details {
+        width: 350px;
     }
 }

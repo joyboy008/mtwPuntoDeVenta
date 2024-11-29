@@ -18,7 +18,7 @@ const ListarData = memo(function ListarData({
   const [criteria, setCriteria] = useState("");
   const [quantities, setQuantities] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5;
+  const itemsPerPage = 6;
 
   useEffect(() => {
     setIsLoading(true);

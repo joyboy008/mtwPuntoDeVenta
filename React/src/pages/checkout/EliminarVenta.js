@@ -8,7 +8,7 @@ function EliminarVenta() {
   const navigate = useNavigate();
   const handleDelete = async () => {
     try {
-      await api.eliminarData("sales", sale.id);
+      await api.desactivarData("sales", sale.id);
       Swal.fire({
         title: "Venta eliminada con éxito!",
         icon: "warning",
@@ -27,14 +27,20 @@ function EliminarVenta() {
 
   return (
     <DefaulLayout title="Eliminar Venta" size="slider-small">
-      <section className="center">
+      <section className="eliminated">
         <h2>
           ¿Estás seguro de que deseas eliminar la venta a{" "}
           <code>{sale.client_name}</code> por <code>{sale.total}</code>{" "}
           Quetzales
         </h2>
-        <button onClick={handleDelete}>Confirmar eliminación</button>
-        <button onClick={() => navigate("/sales")}>Cancelar</button>
+        <div>
+          <button className="dropbtn danger" onClick={handleDelete}>
+            Confirmar eliminación
+          </button>
+          <button className="dropbtn succes" onClick={() => navigate("/sales")}>
+            Cancelar
+          </button>
+        </div>
       </section>
     </DefaulLayout>
   );

@@ -11,7 +11,7 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 # metadata = MetaData()
 # metadata.reflect(bind=engine)
 # SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-# table_name = 'sales'
+# table_name = 'sale_products'
 # if table_name in metadata.tables:
 #     metadata.tables[table_name].drop(engine)
 

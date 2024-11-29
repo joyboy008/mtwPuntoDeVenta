@@ -77,7 +77,7 @@ const FormularioInfo = ({ title }) => {
           required
         ></textarea>
 
-        <button type="submit" className="infoBtn">
+        <button type="submit" className="dropbtn succes">
           Solicitar Información
         </button>
       </form>

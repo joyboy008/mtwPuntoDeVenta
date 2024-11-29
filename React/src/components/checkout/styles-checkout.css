@@ -8,6 +8,7 @@
     box-shadow: 0 4px 8px rgba(26, 25, 25, 0.1);
 }
 
+
 .client-info {
     margin-top: 1rem;
     font-size: 1.2rem;
@@ -65,6 +66,7 @@ code {
 
 .textarea__checkout {
     outline: none;
+    width: 80%;
     background-color: #47474759;
     color: rgb(170, 215, 247);
 }

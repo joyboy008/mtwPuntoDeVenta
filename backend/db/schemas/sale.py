@@ -24,6 +24,7 @@ class SaleResponse(BaseModel):
     products: List[SaleProductResponse]
     date: str
     sale_details: Optional[str] = None
+    is_active: Optional[bool]
 
     class Config:
         orm_mode = True
@@ -40,6 +41,7 @@ class SaleDetailResponse(BaseModel):
     total: float
     date: str
     sale_details: Optional[str] = None
+    is_active: Optional[bool]
     # products: List[SaleProductResponse]  # Ajusta según la estructura de tus productos.
 
     class Config:

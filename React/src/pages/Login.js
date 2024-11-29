@@ -3,7 +3,7 @@ import DefaulLayout from "../components/DefaultLayout";
 import authProvider from "../utils/AuthProvider";
 import api from "../utils/api";
 import { useNavigate } from "react-router-dom";
-import { FaUserDoctor } from "react-icons/fa6";
+import { FaUserAstronaut } from "react-icons/fa6";
 import { RiLockPasswordLine } from "react-icons/ri";
 import Alert from "react-bootstrap/Alert";
 import logo from "../assets/images/logo-mtw.png";
@@ -87,7 +87,7 @@ function Login() {
               }}
               required
             />
-            <FaUserDoctor className="i" />
+            <FaUserAstronaut className="i" />
           </div>
           <div className="input-box">
             <input
@@ -105,7 +105,7 @@ function Login() {
             />
             <RiLockPasswordLine className="i" />
           </div>
-          <input type="submit" value="Confirmar" className="boton" />
+          <input type="submit" value="Confirmar" className="dropbtn succes" />
           <div className={`pt-4 ${showValidationAlert ? "" : "hidden"}`}>
             <Alert key="password-warning" variant="danger">
               Usuario o Password Incorrecto

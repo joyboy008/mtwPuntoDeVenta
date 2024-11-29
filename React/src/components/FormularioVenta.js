@@ -3,6 +3,7 @@
 
 import { Fragment } from "react";
 import { useNavigate } from "react-router-dom";
+import "./tables/styles_table.css";
 
 function FormularioVenta({ title, data }) {
   const navigate = useNavigate();
@@ -64,54 +65,53 @@ function FormularioVenta({ title, data }) {
                           required
                         />
                       </div>
+                      <div className="input-field">
+                        <label>NIT</label>
+                        <input
+                          type="text"
+                          name="client_nit"
+                          value={data.client_nit}
+                          autoComplete="none"
+                          pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñ]+( [A-Za-zÁÉÍÓÚÑáéíóúñ]+)+$"
+                          title="Ej. Pizza Mediana"
+                          // onChange={onChange}
+                          readOnly
+                          placeholder="Nombre del producto"
+                          required
+                        />
+                      </div>
                     </div>
                   </div>
                   <div className="details products">
-                    <span className="title">Productos</span>
                     <div>
-                      {data.products.map((product, index) => (
-                        <div key={product.id || index} className="fields">
-                          <div className="input-field">
-                            <label>Nombre</label>
-                            <input
-                              type="text"
-                              name="product_name"
-                              value={product.product_name}
-                              autoComplete="none"
-                              readOnly
-                              // onChange={(e) => onChange(e, index)}
-                              placeholder="Nombre del producto"
-                              required
-                            />
-                          </div>
-                          <div className="input-field">
-                            <label>Cantidad</label>
-                            <input
-                              type="text"
-                              name="quantity"
-                              value={product.quantity}
-                              autoComplete="none"
-                              readOnly
-                              // onChange={(e) => onChange(e, index)}
-                              placeholder="Cantidad del producto"
-                              required
-                            />
-                          </div>
-                          <div className="input-field">
-                            <label>Precio</label>
-                            <input
-                              type="text"
-                              name="price"
-                              value={product.price}
-                              autoComplete="none"
-                              readOnly
-                              // onChange={(e) => onChange(e, index)}
-                              placeholder="Precio del producto"
-                              required
-                            />
-                          </div>
-                        </div>
-                      ))}
+                      <main
+                        className="table__sale_details"
+                        id="customers_table"
+                      >
+                        <section className="table__header">
+                          <h3>Productos</h3>
+                        </section>
+                        <section className="table__body">
+                          <table>
+                            <thead className="table__head">
+                              <tr>
+                                <th>Cantidad</th>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {data.products.map((product, index) => (
+                                <tr key={index}>
+                                  <td>{product.quantity}</td>
+                                  <td>{product.product_name}</td>
+                                  <td>{product.price}</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </section>
+                      </main>
                       <div className="input-field">
                         <label>Detalle de Venta:</label>
                         <textarea

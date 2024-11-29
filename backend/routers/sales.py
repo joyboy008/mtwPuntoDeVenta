@@ -18,7 +18,7 @@ router = APIRouter(
             dependencies={Depends(JWTValidator())},
             response_model=list[SaleDetailResponse])
 def list_sales(db: Session = Depends(get_db)):
-    sales = db.query(Sale).all()
+    sales = db.query(Sale).filter(Sale.is_active == True).all()
     sales_details = []
 
     for sale in sales:
@@ -35,6 +35,7 @@ def list_sales(db: Session = Depends(get_db)):
             "total": sale.total,
             "date": sale.date,
             "sale_details": sale.sale_details,
+            "is_active": sale.is_active,
         }
 
         sales_details.append(sale_detail)
@@ -143,6 +144,20 @@ def update_sale(sale_id: int, sale: SaleCreate, db: Session = Depends(get_db)):
     db.refresh(db_sale)
     return db_sale
 
+
+@router.put("/{sale_id}/desactivar",
+            dependencies={Depends(JWTValidator())},
+            response_model=dict)
+def desactivar_sale(sale_id: int, db: Session = Depends(get_db)):
+    sale = get_sale(db=db, sale_id=sale_id)
+    if not sale:
+        raise HTTPException(status_code=404, detail="Venta no encontrada")
+    
+    sale.is_active = False
+    db.commit()
+    db.refresh(sale)
+    
+    return {"message": "Venta desactivada con exito"}
 
 @router.delete("/{sale_id}",
             dependencies={Depends(JWTValidator())},

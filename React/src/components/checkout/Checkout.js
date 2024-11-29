@@ -19,7 +19,7 @@ const Checkout = ({
 
   return (
     <div className="checkout">
-      <Slider title="CheckOut" size="slider-small" />
+      <h1>Checkout</h1>
       {selectedClient && (
         <p className="client-info">
           Cliente: <code>{selectedClient.name}</code>
@@ -29,7 +29,7 @@ const Checkout = ({
         {selectedProducts.map((product) => (
           <li key={product.id} className="product-item">
             {product.quantity} | {product.name} | Total: Q
-            {(product.price * product.quantity).toFixed(2)}
+            {(product.price * product.quantity).toFixed(2)} ✔️
           </li>
         ))}
       </ul>
