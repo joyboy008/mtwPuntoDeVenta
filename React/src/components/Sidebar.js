@@ -22,6 +22,7 @@ class Sidebar extends Component {
                 target="_blank"
                 rel="noreferrer"
                 className="facebook-link"
+                aria-label="Visitar perfil de facebook"
               >
                 <FaFacebook /> {/* Icono de Facebook */}
               </a>
@@ -30,6 +31,7 @@ class Sidebar extends Component {
                 target="_blank"
                 rel="noreferrer"
                 className="whatsapp-link"
+                aria-label="Escribir a whatsapp"
               >
                 <FaWhatsapp /> {/* Icono de W */}
               </a>
@@ -38,14 +40,16 @@ class Sidebar extends Component {
                 target="_blank"
                 rel="noreferrer"
                 className="instagram-link"
+                aria-label="Visitar perfil de instagram"
               >
                 <FaInstagram /> {/* Icono de W */}
               </a>
               <a
-                href="mailto:mgrrsystems@email.com"
+                href="mailto:mrlntechworks@icloud.com"
                 target="_blank"
                 rel="noreferrer"
                 className="email-link"
+                aria-label="Enviar un email a MrlnTechWorks"
               >
                 <MdEmail /> {/* Icono de Email */}
               </a>

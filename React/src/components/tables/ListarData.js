@@ -97,7 +97,7 @@ const ListarData = memo(function ListarData({
   };
 
   return (
-    <div>
+    <div className="centrar__tables">
       <Buscador
         placeholder={`Buscar ${title.toLowerCase()}...`}
         value={criteria}

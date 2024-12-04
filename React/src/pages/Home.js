@@ -9,11 +9,7 @@ class Home extends Component {
     // var buttonString = "Nuestros Servicios";
     return (
       <React.Fragment>
-        <DefaulLayout
-          title="Restaurante Tech Works"
-          size="slider-small"
-          showSidebar
-        >
+        <DefaulLayout title="Mrln Tech Works" size="slider-small" showSidebar>
           <div id="content">
             <Servicios />
             <FormularioInfo

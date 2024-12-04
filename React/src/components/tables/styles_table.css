@@ -9,10 +9,12 @@
     }
 }
 
-/* 
-td {
-    min-width: 175px;
-} */
+.centrar__tables {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 /* Estilo principal para la tabla */
 main.table {
@@ -160,5 +162,9 @@ thead th:hover {
 @media (max-width: 500px) {
     main.table__sale_details {
         width: 350px;
+    }
+
+    main {
+        font-size: 0.8em;
     }
 }

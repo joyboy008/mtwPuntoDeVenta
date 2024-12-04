@@ -43,21 +43,21 @@ function Header() {
         >
           <nav>
             <div className="title">
-              <img className="logo-line" src={logo} alt="Logotipo" />
+              <NavLink to="/">
+                <img className="logo-line" src={logo} alt="Logotipo" />
+              </NavLink>
             </div>
             <div className="menu">
-              <NavLink className="dropbtn" to="/">
-                Inicio
-              </NavLink>
-              <NavLink className="dropbtn" to="/chatbot">
-                ChatBot
-              </NavLink>
               {authProvider.checkRoutePermissions("moderador") ? (
                 <div className="dropdown">
-                  <input type="checkbox" id="dropdown-toggle-citas" />
-                  <label className="dropbtn" htmlFor="dropdown-toggle-citas">
+                  <input type="checkbox" id="dropdown-toggle-sales" />
+                  <label
+                    className="dropbtn headermin"
+                    htmlFor="dropdown-toggle-sales"
+                  >
                     Ventas
                   </label>
+
                   <div className="dropdown-content">
                     <NavLink to="/checkout">Realizar venta</NavLink>
                     <NavLink to="/sales">Listar Ventas</NavLink>
@@ -66,8 +66,11 @@ function Header() {
               ) : null}
               {authProvider.checkRoutePermissions("moderador") ? (
                 <div className="dropdown">
-                  <input type="checkbox" id="dropdown-toggle-citas" />
-                  <label className="dropbtn" htmlFor="dropdown-toggle-citas">
+                  <input type="checkbox" id="dropdown-toggle-products" />
+                  <label
+                    className="dropbtn headermin"
+                    htmlFor="dropdown-toggle-products"
+                  >
                     Productos
                   </label>
                   <div className="dropdown-content">
@@ -82,7 +85,7 @@ function Header() {
                 <div className="dropdown">
                   <input type="checkbox" id="dropdown-toggle-pacientes" />
                   <label
-                    className="dropbtn"
+                    className="dropbtn headermin"
                     htmlFor="dropdown-toggle-pacientes"
                   >
                     Clientes
@@ -106,13 +109,13 @@ function Header() {
                 </div>
               ) : null}
               {!!authProvider.checkAuth() ? (
-                <div>
-                  <button
-                    className="dropbtn danger"
+                <div className="dropdown">
+                  <label
+                    className="dropbtn danger headermin"
                     onClick={handleCloseSession}
                   >
                     {user ? <span>{user.username}</span> : <span>Login</span>}
-                  </button>
+                  </label>
                 </div>
               ) : (
                 <NavLink className="dropbtn succes" to="/login">

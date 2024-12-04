@@ -11,7 +11,7 @@ router = APIRouter(
 )
 
 @router.post("/", response_model=User, 
-            #  dependencies={Depends(JWTValidator())}
+             dependencies={Depends(JWTValidator())}
              )
 def add_user(user: UserCreate, db: Session = Depends(get_db)):
     return create_user(db=db, user=user)

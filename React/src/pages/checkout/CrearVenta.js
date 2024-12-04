@@ -145,7 +145,6 @@ function CrearVenta() {
             handleConfirmSale={handleConfirmSale}
             sendDetailsToCreateSale={handleDetailsSaleChange}
           />
-          <Slider title="Productos" size="slider-small" />
           <ListarData
             title="Productos"
             fetchFunction={fetchProductos}
@@ -154,7 +153,6 @@ function CrearVenta() {
             onAddProduct={handleAddProduct}
             whatIs={"nuevoProducto"}
           />
-          <Slider title="Clientes" size="slider-small" />
           <ListarData
             title="Clientes"
             fetchFunction={fetchClientes}
