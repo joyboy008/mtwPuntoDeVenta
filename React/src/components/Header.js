@@ -99,7 +99,10 @@ function Header() {
               {authProvider.checkRoutePermissions("admin") ? (
                 <div className="dropdown">
                   <input type="checkbox" id="dropdown-toggle-usuarios" />
-                  <label className="dropbtn" htmlFor="dropdown-toggle-usuarios">
+                  <label
+                    className="dropbtn headermin"
+                    htmlFor="dropdown-toggle-usuarios"
+                  >
                     Usuarios
                   </label>
                   <div className="dropdown-content">
