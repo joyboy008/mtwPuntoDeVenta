@@ -149,7 +149,7 @@ function CrearVenta() {
             title="Productos"
             fetchFunction={fetchProductos}
             columns={columnsProductos}
-            searchFields={["name", "price", "description", "category"]}
+            searchFields={["name", "price", "description", "category", "code"]}
             onAddProduct={handleAddProduct}
             whatIs={"nuevoProducto"}
           />
