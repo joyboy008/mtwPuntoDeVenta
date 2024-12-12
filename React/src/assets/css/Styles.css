@@ -30,7 +30,7 @@ body {
 }
 
 .header.hide {
-  transform: translateY(-100%);
+  opacity: 0.5;
 }
 
 header nav {
@@ -805,14 +805,13 @@ textarea {
   }
 
   .header {
-    height: 105px;
+    height: 125px;
     padding-top: 0;
   }
 
   .blackHeader {
-    height: 105px;
+    height: 125px;
   }
-
 
   .headermin {
     font-size: 0.8em;
