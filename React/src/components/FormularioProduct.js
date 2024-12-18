@@ -61,7 +61,7 @@ function FormularioProduct({
                         required
                       />
                     </div>
-                    <div className="input-field">
+                    {/* <div className="input-field">
                       <label>Stock</label>
                       <input
                         type="text"
@@ -74,7 +74,7 @@ function FormularioProduct({
                         placeholder="Cantidad de productos a ingresar"
                         required
                       />
-                    </div>
+                    </div> */}
                     <div className="input-field">
                       <label>Precio</label>
                       <input
@@ -89,7 +89,7 @@ function FormularioProduct({
                         required
                       />
                     </div>
-                    <div className="input-field">
+                    {/* <div className="input-field">
                       <label>Imagen</label>
                       <input
                         type="text"
@@ -102,7 +102,7 @@ function FormularioProduct({
                         placeholder="Imagen"
                         required
                       />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <div className="details personal">
