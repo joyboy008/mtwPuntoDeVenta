@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import logo from "../assets/images/logo-mtw-header.png";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import authProvider from "../utils/AuthProvider";
 
 function Header() {
@@ -24,7 +24,9 @@ function Header() {
 
     window.addEventListener("scroll", handleScroll);
     const activeUser = authProvider.getUsuario();
-    setUser(activeUser);
+    if (activeUser !== user) {
+      setUser(activeUser);
+    }
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -32,7 +34,7 @@ function Header() {
 
   const handleCloseSession = () => {
     authProvider.deleteSession();
-    navigate("/");
+    navigate("/", { replace: true });
   };
 
   return (
@@ -43,9 +45,9 @@ function Header() {
         >
           <nav>
             <div className="title">
-              <NavLink to="/">
+              <Link to="/">
                 <img className="logo-line" src={logo} alt="Logotipo" />
-              </NavLink>
+              </Link>
             </div>
             <div className="menu">
               {authProvider.checkRoutePermissions("moderador") ? (
@@ -59,8 +61,8 @@ function Header() {
                   </label>
 
                   <div className="dropdown-content">
-                    <NavLink to="/checkout">Realizar venta</NavLink>
-                    <NavLink to="/sales">Listar Ventas</NavLink>
+                    <Link to="/checkout">Realizar venta</Link>
+                    <Link to="/sales">Listar Ventas</Link>
                   </div>
                 </div>
               ) : null}
@@ -75,9 +77,9 @@ function Header() {
                   </label>
                   <div className="dropdown-content">
                     {authProvider.checkRoutePermissions("admin") ? (
-                      <NavLink to="/new_product">Nuevo Producto</NavLink>
+                      <Link to="/new_product">Nuevo Producto</Link>
                     ) : null}
-                    <NavLink to="/productos">Listar Productos</NavLink>
+                    <Link to="/productos">Listar Productos</Link>
                   </div>
                 </div>
               ) : null}
@@ -91,8 +93,8 @@ function Header() {
                     Clientes
                   </label>
                   <div className="dropdown-content">
-                    <NavLink to="/new_client">Nuevo Cliente</NavLink>
-                    <NavLink to="/clientes">Listar Clientes</NavLink>
+                    <Link to="/new_client">Nuevo Cliente</Link>
+                    <Link to="/clientes">Listar Clientes</Link>
                   </div>
                 </div>
               ) : null}
@@ -106,24 +108,24 @@ function Header() {
                     Usuarios
                   </label>
                   <div className="dropdown-content">
-                    <NavLink to="/new_user">Nuevo Usuario</NavLink>
-                    <NavLink to="/users">Listar Usuarios</NavLink>
+                    <Link to="/new_user">Nuevo Usuario</Link>
+                    <Link to="/users">Listar Usuarios</Link>
                   </div>
                 </div>
               ) : null}
               {!!authProvider.checkAuth() ? (
                 <div className="dropdown">
-                  <label
+                  <button
                     className="dropbtn danger headermin"
                     onClick={handleCloseSession}
                   >
                     {user ? <span>{user.username}</span> : <span>Login</span>}
-                  </label>
+                  </button>
                 </div>
               ) : (
-                <NavLink className="dropbtn succes" to="/login">
+                <Link className="dropbtn succes" to="/login">
                   Login
-                </NavLink>
+                </Link>
               )}
             </div>
           </nav>

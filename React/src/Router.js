@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import {
-  json,
   RouterProvider,
   createBrowserRouter,
   redirect,
@@ -65,14 +64,14 @@ const router = createBrowserRouter([
     path: "/new_client",
     element: <CrearClient />,
     loader: requireAuth(async () => {
-      return json({});
+      return {};
     }),
   },
   {
     path: "/clientes",
     element: <ListarClients />,
     loader: requireAuth(async () => {
-      return json({});
+      return {};
     }),
   },
   {
@@ -80,7 +79,7 @@ const router = createBrowserRouter([
     element: <ActualizarClient />,
     loader: requireAuth(async ({ params }) => {
       const response = await api.getData("clientes", params.clientId);
-      return json(response.data, { status: 200 });
+      return response.data;
     }),
   },
   {
@@ -94,7 +93,7 @@ const router = createBrowserRouter([
         if (!response.data) {
           return redirect("/clients");
         }
-        return json(response.data, { status: 200 });
+        return response.data;
       }
     }),
   },
@@ -105,7 +104,7 @@ const router = createBrowserRouter([
       if (!authProvider.checkRoutePermissions("admin")) {
         return redirect("/");
       } else {
-        return json({});
+        return {};
       }
     }),
   },
@@ -113,7 +112,7 @@ const router = createBrowserRouter([
     path: "/productos",
     element: <ListarProducts />,
     loader: requireAuth(async () => {
-      return json({});
+      return {};
     }),
   },
   {
@@ -121,7 +120,8 @@ const router = createBrowserRouter([
     element: <ActualizarProduct />,
     loader: requireAuth(async ({ params }) => {
       const response = await api.getData("productos", params.productId);
-      return json(response.data, { status: 200 });
+      return response.data;
+      // return json(response.data, { status: 200 });
     }),
   },
   {
@@ -135,7 +135,7 @@ const router = createBrowserRouter([
         if (!response.data) {
           return redirect("/products");
         }
-        return json(response.data, { status: 200 });
+        return response.data;
       }
     }),
   },
@@ -146,7 +146,7 @@ const router = createBrowserRouter([
       if (!authProvider.checkRoutePermissions("admin")) {
         return redirect("/");
       } else {
-        return json({});
+        return {};
       }
     }),
   },
@@ -157,7 +157,7 @@ const router = createBrowserRouter([
       if (!authProvider.checkRoutePermissions("moderador")) {
         return redirect("/");
       } else {
-        return json({});
+        return {};
       }
     }),
   },
@@ -168,7 +168,7 @@ const router = createBrowserRouter([
       if (!authProvider.checkRoutePermissions("moderador")) {
         return redirect("/");
       } else {
-        return json({});
+        return {};
       }
     }),
   },
@@ -180,7 +180,7 @@ const router = createBrowserRouter([
         return redirect("/");
       } else {
         const response = await api.getData("sales", params.saleId);
-        return json(response.data, { status: 200 });
+        return response.data;
       }
     }),
   },
@@ -195,7 +195,7 @@ const router = createBrowserRouter([
         if (!response.data) {
           return redirect("/sales");
         }
-        return json(response.data, { status: 200 });
+        return response.data;
       }
     }),
   },
@@ -206,7 +206,7 @@ const router = createBrowserRouter([
       if (!authProvider.checkRoutePermissions("admin")) {
         return redirect("/");
       } else {
-        return json({});
+        return {};
       }
     }),
   },
@@ -218,7 +218,7 @@ const router = createBrowserRouter([
         return redirect("/");
       } else {
         const response = await api.getData("users", params.usuarioId);
-        return json(response.data, { status: 200 });
+        return response.data;
       }
     }),
   },
@@ -233,7 +233,7 @@ const router = createBrowserRouter([
         if (!response.data) {
           return redirect("/users");
         }
-        return json(response.data, { status: 200 });
+        return response.data;
       }
     }),
   },
