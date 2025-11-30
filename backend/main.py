@@ -15,7 +15,9 @@ from routers import inventory, users, auth, clients, sales, chat, contact
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
-origins = ["http://localhost:3000", "https://mtw.lat", "http://mtw.lat"]
+# origins = ["https://mtw.marlonralda.dev", "http://mtw.marlonralda.dev"]
+origins = ["http://localhost:3000", "https://mtw.marlonralda.dev", "http://mtw.marlonralda.dev"]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,

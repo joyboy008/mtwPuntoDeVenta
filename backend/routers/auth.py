@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from fastapi.exceptions import HTTPException
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from db.models.User import User  # Asegúrate de que estás importando tu modelo SQLAlchemy
+from db.models.User import User  
 from utils.constants import JWT_ALGORITHM, JWT_SECRET
 from utils.auth import Hasher, Credentials
 from db.database import get_db 
