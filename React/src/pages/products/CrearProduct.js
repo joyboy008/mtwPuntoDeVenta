@@ -22,6 +22,8 @@ class CrearProduct extends Component {
   };
   handleSubmit = (event) => {
     event.preventDefault();
+    this.state.stock = 1;
+    this.state.image = "image.jpg";
     api
       .crearData("productos", this.state)
       .then((response) => {
