@@ -25,7 +25,7 @@ const ListarData = memo(function ListarData({
     fetchFunction()
       .then((response) => {
         const sortedData = (response.data || []).sort((a, b) => {
-          const dateA = parseDate(a.date); // Asegúrate de que `a.date` sea el formato correcto
+          const dateA = parseDate(a.date);
           const dateB = parseDate(b.date);
           return dateB - dateA; // Orden ascendente
         });

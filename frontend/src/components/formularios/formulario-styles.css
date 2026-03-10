@@ -249,13 +249,15 @@ form .buttons button {
 }
 
 .form-container {
-    background-color: #171717;
+    background-color: #1e1e1e;
     padding: 40px;
-    border-radius: 8px;
+    border-radius: 16px;
     max-width: 600px;
     margin: 0 auto;
+    margin-top: 16px;
     color: #0080c9;
     text-align: left;
+    box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .form-container h3 {

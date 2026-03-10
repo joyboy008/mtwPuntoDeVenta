@@ -2,7 +2,7 @@
 
 import { Fragment, Component } from "react";
 import Servicio from "./Servicio";
-import nosotros from "../assets/images/logo-mtw.png";
+import nosotros from "../assets/images/logo-mtw1.png";
 import punto from "../assets/images/punto de venta.png";
 import react from "../assets/images/react.png";
 import consultoria from "../assets/images/consultoria-IT.png";
