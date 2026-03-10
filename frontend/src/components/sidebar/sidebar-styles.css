@@ -1,0 +1,41 @@
+/* Estilos CSS para aumentar el tamaño de los íconos */
+.sidebar-item a {
+    font-size: 40px;
+    margin-right: 10px;
+    color: #333;
+    text-decoration: none;
+    will-change: filter;
+    transition: color 300ms;
+}
+
+#sidebar {
+    width: 25%;
+    float: left;
+    background-color: transparent;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sidebar-item {
+    background: transparent;
+    padding: 20px;
+    min-width: 300px;
+}
+
+
+.sidebar-item h3 {
+    text-transform: uppercase;
+    font-size: 18px;
+    margin: 0px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #1e1e1e;
+}
+
+.sidebar-item .btn {
+    margin-top: 10px;
+    margin: 0px auto;
+}

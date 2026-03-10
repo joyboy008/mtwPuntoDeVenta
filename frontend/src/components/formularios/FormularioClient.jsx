@@ -1,7 +1,9 @@
 // Se utiliza en CitaActualizar.js
 // Se utiliza en CitaCrear.js
 
-function FormularioProduct({
+import "./formulario-styles.css";
+
+function FormularioClient({
   title,
   onSubmit,
   onChange,
@@ -17,7 +19,7 @@ function FormularioProduct({
             <form onSubmit={onSubmit}>
               <div className="form first">
                 <div className="details personal">
-                  <span className="title">Datos del producto</span>
+                  <span className="title">Datos del cliente</span>
                   <div className="fields">
                     <div className="input-field">
                       <label>Nombre</label>
@@ -27,96 +29,67 @@ function FormularioProduct({
                         value={data.name}
                         autoComplete="none"
                         pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñ]+( [A-Za-zÁÉÍÓÚÑáéíóúñ]+)+$"
-                        title="Ej. Pizza Mediana"
+                        title="Ej. Braulio Juarez"
                         onChange={onChange}
-                        placeholder="Nombre del producto"
+                        placeholder="Nombre del Cliente"
                         required
                       />
                     </div>
                     <div className="input-field">
-                      <label>Código</label>
+                      <label>NIT</label>
                       <input
                         type="text"
-                        name="code"
-                        value={data.code}
+                        name="nit"
+                        value={data.nit}
                         autoComplete="none"
-                        // pattern=""
-                        title="M8"
+                        pattern="^\d+$|^cf$|^CF$"
+                        title="Nit o cf"
                         onChange={onChange}
-                        placeholder="Código de producto"
+                        placeholder="nit del cliente"
                         required
                       />
                     </div>
                     <div className="input-field">
-                      <label>Categoría</label>
+                      <label>Teléfono</label>
                       <input
                         type="text"
-                        name="category"
-                        title="Ej. Pizzas"
-                        pattern="^[A-Za-z0-9]+(?: [A-Za-z0-9]+)*$"
-                        value={data.category}
+                        name="phone"
+                        title="55223939"
+                        pattern="^\d{8}$"
+                        value={data.phone}
                         autoComplete="none"
                         onChange={onChange}
                         placeholder="Categoria del producto"
                         required
                       />
                     </div>
-                    {/* <div className="input-field">
-                      <label>Stock</label>
-                      <input
-                        type="text"
-                        name="stock"
-                        title="Ej. 100"
-                        // pattern=""
-                        value={data.stock}
-                        autoComplete="none"
-                        onChange={onChange}
-                        placeholder="Cantidad de productos a ingresar"
-                        required
-                      />
-                    </div> */}
                     <div className="input-field">
-                      <label>Precio</label>
+                      <label>Dirección o Referencia</label>
                       <input
                         type="text"
-                        name="price"
-                        title="Ej. 99"
-                        // pattern=""
-                        value={data.price}
+                        name="address"
+                        title="Ej. 100"
+                        pattern="^[A-Za-z0-9\s,.-]+$"
+                        value={data.address}
                         autoComplete="none"
                         onChange={onChange}
-                        placeholder="Valor del producto"
+                        placeholder="2da calle 3-23 zona 3 san juan ostuncalco"
                         required
                       />
                     </div>
-                    {/* <div className="input-field">
-                      <label>Imagen</label>
+                    <div className="input-field">
+                      <label>email</label>
                       <input
                         type="text"
-                        name="image"
-                        title="Ej. 100"
-                        // pattern=""
-                        value={data.image}
+                        name="email"
+                        title="Ej. ejemplo@restaurante.com"
+                        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                        value={data.email}
                         autoComplete="none"
                         onChange={onChange}
-                        placeholder="Imagen"
+                        placeholder="rouos21@hmial.com"
                         required
                       />
-                    </div> */}
-                  </div>
-                </div>
-                <div className="details personal">
-                  <div className="fields">
-                    <div className="input-field">
-                      <label>Descripción</label>
-                      <textarea
-                        name="description"
-                        autoComplete="none"
-                        onChange={onChange}
-                        placeholder="información sobre el producto..."
-                        value={data.description}
-                        required
-                      ></textarea>
                     </div>
                   </div>
                 </div>
@@ -134,4 +107,4 @@ function FormularioProduct({
   );
 }
 
-export default FormularioProduct;
+export default FormularioClient;

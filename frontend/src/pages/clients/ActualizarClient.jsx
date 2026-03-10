@@ -4,7 +4,7 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
 import Swal from "sweetalert2";
 import api from "../../utils/api";
-import FormularioClient from "../../components/FormularioClient";
+import FormularioClient from "../../components/formularios/FormularioClient";
 
 function ActualizarClient() {
   const navigate = useNavigate();

@@ -2,8 +2,9 @@
 // Se utiliza en Contacto
 
 import { useState } from "react";
-import api from "../utils/api";
+import api from "../../utils/api";
 import Swal from "sweetalert2";
+import "./formulario-styles.css";
 
 const FormularioInfo = ({ title }) => {
   const [formData, setFormData] = useState({

@@ -1,6 +1,7 @@
 // Se utiliza para pagina no encontrada
 
-import logo from "../assets/images/logo-mtw-header.png";
+import logo from "../../assets/images/logo-mtw-header.png";
+import "./error-styles.css";
 import { NavLink } from "react-router-dom";
 
 const Error = () => {
@@ -12,6 +13,9 @@ const Error = () => {
       <div className="notFoundMessage">
         <h1 className="subheader">Página no encontrada.</h1>
         <p>La página a la que intentas acceder no existe en nuestra red.</p>
+        <NavLink className="dropbtn" to="/">
+          Regresar
+        </NavLink>
       </div>
     </div>
   );

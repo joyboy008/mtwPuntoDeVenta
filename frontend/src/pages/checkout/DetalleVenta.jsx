@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import DefaulLayout from "../../components/DefaultLayout";
 import { useLoaderData } from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
-import FormularioVenta from "../../components/FormularioVenta";
+import FormularioVenta from "../../components/formularios/FormularioVenta";
 import api from "../../utils/api";
 
 function DetalleVenta() {

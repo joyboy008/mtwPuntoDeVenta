@@ -3,7 +3,8 @@
 
 import { Fragment } from "react";
 import { useNavigate } from "react-router-dom";
-import "./tables/styles_table.css";
+import "../tables/styles_table.css";
+import "./formulario-styles.css";
 
 function FormularioVenta({ title, data }) {
   const navigate = useNavigate();

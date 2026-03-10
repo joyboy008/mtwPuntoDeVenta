@@ -16,7 +16,7 @@
 // Se utiliza en UsuariosListar.js
 
 import Header from "./Header";
-import Sidebar from "./Sidebar";
+import Sidebar from "./sidebar/Sidebar";
 import Slider from "./Slider";
 
 function DefaultLayout({

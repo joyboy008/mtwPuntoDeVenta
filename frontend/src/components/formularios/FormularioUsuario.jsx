@@ -2,8 +2,9 @@
 // Se utiliza en UsuariosCrear.js
 
 import { Fragment } from "react";
-import Select from "./fields/Select";
-import { Roles } from "../utils/constants";
+import Select from "../fields/Select";
+import { Roles } from "../../utils/constants";
+import "./formulario-styles.css";
 
 function Formulario({ esActualizacion, title, data, onChange, onSubmit }) {
   const rolesOptions = [

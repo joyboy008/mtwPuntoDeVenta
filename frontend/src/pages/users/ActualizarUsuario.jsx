@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import DefaulLayout from "../../components/DefaultLayout";
-import FormularioUsuario from "../../components/FormularioUsuario";
+import FormularioUsuario from "../../components/formularios/FormularioUsuario";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import api from "../../utils/api";
 import Swal from "sweetalert2";

@@ -3,6 +3,7 @@
 import { Fragment, Component } from "react";
 import { FaFacebook, FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md"; // Importar el ícono de correo electrónico
+import "./sidebar-styles.css"
 
 class Sidebar extends Component {
   render() {

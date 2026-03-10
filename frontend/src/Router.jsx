@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import ChatBot from "./pages/ChatBot";
 import Contacto from "./pages/Contacto";
 import Login from "./pages/Login";
-import Error from "./components/error";
+import Error from "./components/error/error";
 
 import CrearProduct from "./pages/products/CrearProduct";
 import ListarProducts from "./pages/products/ListarProducts";

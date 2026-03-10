@@ -1,6 +1,6 @@
 import { Component } from "react";
 import DefaultLayout from "../../components/DefaultLayout";
-import FormularioProduct from "../../components/FormularioProduct";
+import FormularioProduct from "../../components/formularios/FormularioProduct";
 import api from "../../utils/api";
 import Swal from "sweetalert2";
 
