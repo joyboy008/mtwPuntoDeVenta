@@ -25,7 +25,7 @@ const FormularioInfo = ({ title }) => {
     e.preventDefault();
     // Aquí puedes manejar el envío del formulario, por ejemplo, enviarlo a tu backend
     try {
-      api.crearData("contact", formData).then((response) => {
+      api.crearDataFormInfoPublic("contact", formData).then((response) => {
         Swal.fire({
           title: "Pronto estaremos en contacto contigo!",
           icon: "success",

@@ -32,6 +32,11 @@ const api = {
       headers,
     });
   },
+  crearDataFormInfoPublic: (endpoint, data) => {
+  return axiosInstance.post(`${BASE_URL}/${endpoint}/`, data, {
+    headers: { "Content-Type": "application/json" },
+  });
+},
   getData: (endpoint, id) => {
     const authHeaders = authProvider.getAuthHeaders();
     const headers = {

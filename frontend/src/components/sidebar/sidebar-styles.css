@@ -41,3 +41,13 @@
     margin-top: 10px;
     margin: 0px auto;
 }
+
+
+@media (max-width: 980px) {
+    #sidebar {
+        float: none;
+        width: 300px;
+        margin: 0px auto;
+        margin-bottom: 50px;
+    }
+}
