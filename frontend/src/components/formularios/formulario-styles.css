@@ -200,11 +200,9 @@ form .fields .input-field {
     font-weight: 400;
 }
 
-
 .formdentro form button:hover {
     background: linear-gradient(-45deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgb(50, 125, 238) 83%);
 }
-
 
 .formdentro form button i {
     margin: 0 6px;
@@ -216,7 +214,6 @@ form .buttons {
     justify-content: space-between;
     align-items: center;
 }
-
 
 form .buttons button {
     margin-right: 14px;
@@ -250,7 +247,6 @@ form .buttons button {
 .formInfo textarea:focus {
     outline: 2px solid rgb(99, 221, 255);
 }
-
 
 .form-container {
     background-color: #171717;
