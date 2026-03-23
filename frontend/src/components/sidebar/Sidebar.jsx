@@ -13,13 +13,13 @@ class Sidebar extends Component {
           <Fragment>
             <div id="nav-blog" className="sidebar-item">
               <h3>Dirección</h3>
-              <p>09023 - La Esperanza, Quetzaltenango, Guatemala</p>
-              <p>Telefono: +(502) 5031-4174</p>
+              <p>09009 - San Juan Ostuncalco, Quetzaltenango, Guatemala</p>
+              <p>Telefono: +(502) 3046-7979</p>
             </div>
             <div id="search" className="sidebar-item">
               <h3>Redes Sociales</h3>
               <a
-                href="https://www.facebook.com/profile.php?id=61562931370711"
+                href="https://www.facebook.com/kathynails00"
                 target="_blank"
                 rel="noreferrer"
                 className="facebook-link"
@@ -28,7 +28,7 @@ class Sidebar extends Component {
                 <FaFacebook /> {/* Icono de Facebook */}
               </a>
               <a
-                href="https://wa.me/50250314174"
+                href="https://wa.me/50230467979"
                 target="_blank"
                 rel="noreferrer"
                 className="whatsapp-link"
@@ -37,7 +37,7 @@ class Sidebar extends Component {
                 <FaWhatsapp /> {/* Icono de W */}
               </a>
               <a
-                href="https://www.instagram.com/mtechworks?igsh=OHFkYjJhMndtcThx "
+                href="https://www.instagram.com/kathynails00"
                 target="_blank"
                 rel="noreferrer"
                 className="instagram-link"
@@ -45,15 +45,15 @@ class Sidebar extends Component {
               >
                 <FaInstagram /> {/* Icono de W */}
               </a>
-              <a
-                href="mailto:mrlntechworks@icloud.com"
-                target="_blank"
-                rel="noreferrer"
-                className="email-link"
-                aria-label="Enviar un email a MrlnTechWorks"
-              >
-                <MdEmail /> {/* Icono de Email */}
-              </a>
+              {/* <a */}
+                {/* href="mailto:mrlntechworks@icloud.com" */}
+                {/* target="_blank" */}
+                {/* rel="noreferrer" */}
+                {/* className="email-link" */}
+                {/* aria-label="Enviar un email a MrlnTechWorks" */}
+              {/* > */}
+                {/* <MdEmail /> Icono de Email */}
+              {/* </a> */}
             </div>
           </Fragment>
         )}

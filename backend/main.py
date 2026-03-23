@@ -3,15 +3,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from db.database import engine, Base, get_db
 from routers import inventory, users, auth, clients, sales, chat, contact
 
-
-# pip install "fastapi[all]"
-# este comando es para instalar todas las dependencias
-
-# Iniciar el Server: uvicorn main:app --reload
-# Detener el server: ctrl+c
-
-# Url local: http://127.0.0.1:8000
-
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()

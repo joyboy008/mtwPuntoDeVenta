@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import logo from "../assets/images/logo-mtw-header.png";
+import logo from "../assets/images/logo unias mila.png";
 import { Link, useNavigate } from "react-router-dom";
 import authProvider from "../utils/AuthProvider";
 

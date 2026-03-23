@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { FaUserAstronaut } from "react-icons/fa6";
 import { RiLockPasswordLine } from "react-icons/ri";
 import Alert from "react-bootstrap/Alert";
-import logo from "../assets/images/logo-mtw.png";
+import logo from "../assets/images/logo unias mila.png";
 
 function Login() {
   const navigate = useNavigate();

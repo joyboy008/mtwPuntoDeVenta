@@ -1,3 +1,27 @@
+:root {
+  /* 🎨 Paleta principal */
+  --color-bg: #fde4ec;
+  /* fondo principal */
+  --color-primary: #f8c8dc;
+  /* rosado suave */
+  --color-secondary: #f4b6cf;
+  /* rosado más marcado */
+  --color-bg-danger: rgb(255, 99, 99);
+
+  /* 🌷 Variantes útiles */
+  --color-primary-light: #fce1ec;
+  --color-primary-dark: #eaa3c2;
+
+  /* 🖋️ Texto */
+  --color-text: #5a4a52;
+  --color-text-light: #8a6f78;
+  --color-text-black: #171717;
+
+  /* ✨ Extras */
+  --color-white: #ffffff;
+  --color-border: #f3c6d6;
+}
+
 body {
   box-sizing: border-box;
   text-align: center;
@@ -5,8 +29,8 @@ body {
   padding: 0px;
   /*fuentes*/
   font-family: 'Poppins', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: #171717;
-  color: #35c2ff;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 .blackHeader {
@@ -18,7 +42,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #171717;
+  background-color: var(--color-primary-light);
   opacity: 0.98;
   position: fixed;
   top: 0;
@@ -55,7 +79,7 @@ header nav .title h2 {
   justify-content: center;
   font-size: 42x;
   font-weight: 500;
-  color: whitesmoke;
+  color: var(--color-text-black);
 }
 
 
@@ -65,7 +89,7 @@ header nav .title a img {
 
 
 header nav .title :hover {
-  color: rgb(201, 212, 208);
+  color: var(--color-text-black);
 }
 
 
@@ -81,8 +105,8 @@ nav .menu {
 }
 
 .dropbtn {
-  background-color: #171717;
-  color: #eee;
+  background-color: var(--color-primary);
+  color: var(--color-text-black);
   margin: 0 4px;
   padding: 16px;
   font-size: 16px;
@@ -95,7 +119,7 @@ nav .menu {
 
 /* Con hover, cambia el background color */
 .dropbtn:hover {
-  background-color: #1e1e1e;
+  background-color: var(--color-text-black);
 }
 
 .dropdown {
@@ -107,7 +131,7 @@ nav .menu {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #171717;
+  background-color: var(--color-text-black);
   min-width: 160px;
   z-index: 1;
   border-radius: 5px;
@@ -116,7 +140,7 @@ nav .menu {
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: #eee;
+  color: var(--color-text-light);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -132,7 +156,7 @@ nav .menu {
 }
 
 .dropdown-content a:hover {
-  background-color: #1e1e1e;
+  background-color: var(--color-text-black);
 }
 
 .dropdown:hover .dropdown-content {
@@ -152,13 +176,13 @@ input[type="checkbox"] {
 
 .danger:hover,
 .danger:focus {
-  background-color: rgb(255, 99, 99);
+  background-color: var(--color-bg-danger);
   transition: border-color 0.25s;
 }
 
 .succes:hover,
 .succes:focus {
-  background-color: #60b3d6;
+  background-color: var(--color-primary-dark);
   color: #171717;
 }
 
@@ -214,7 +238,7 @@ summary div p {
 label {
   margin: 10px 0 5px;
   display: block;
-  color: rgb(99, 221, 255);
+  color: var(--color-text-light);
 }
 
 
@@ -251,17 +275,18 @@ label {
 
 
 #slider {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(45deg, #171717 0%, rgb(41, 41, 41) 0%, rgb(53, 53, 53) 83%);
+  background: var(--color-primary-light);
+  background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-border) 0%, var(--color-bg) 83%);
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-
+  border-bottom: solid var(--color-border);
+  border-top: solid var(--color-border);
   height: 350px;
   /*line-height: 320px;*/
-  color: whitesmoke;
-  text-shadow: 0px 0px 5px #444;
+  color: var(--color-text);
+  /* text-shadow: 0px 0px 5px #444; */
 }
 
 #slider h1 {
@@ -300,12 +325,12 @@ label {
 .wrapper {
   width: 420px;
   margin: 20px 0;
-  background-color: #171717;
+  background-color: var(--color-primary-light);
   /* background: transparent; */
-  color: #0080c9;
+  color: var(--color-text-light);
   border-radius: 10px;
   padding: 30px 40px;
-  border: 2px solid #0080c9;
+  border: 2px solid var(--color-border);
 }
 
 .wrapper .input-box {
@@ -321,16 +346,16 @@ label {
   background: transparent;
   border: none;
   outline: none;
-  border: 2px solid #0080c9;
+  border: 2px solid var(--color-border);
   border-radius: 40px;
   font-size: 16px;
-  color: #0080c9;
+  color: var(--color-text-light);
   padding: 20px 45px 20px 20px;
   font-weight: 600;
 }
 
 .input-box input::placeholder {
-  color: #03a0e3;
+  color: var(--color-text-light);
 }
 
 .input-box .i {
@@ -344,18 +369,18 @@ label {
 .wrapper .boton {
   width: 100%;
   height: 45px;
-  background: linear-gradient(90deg, #00d2ff 0%, #03a0e3 100%);
+  background: linear-gradient(90deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
   border: none;
   outline: none;
   border-radius: 40px;
   box-shadow: 3px 3px 6px;
   font-size: 16px;
-  color: #333;
+  color: var(--color-text-light);
   font-weight: 600;
 }
 
 .wrapper .boton:hover {
-  background: #03a0e3;
+  background: var(--color-primary-dark);
 }
 
 textarea {
@@ -369,13 +394,21 @@ textarea {
   width: 100%;
   height: 70px;
   line-height: 70px;
-  color: #444;
+  color: var(--color-text-black);
 }
 
 
-#footer p {
+#footer a {
+  text-decoration: none;
+  color: currentColor;
   margin: 0px;
   padding: 0px;
+}
+
+
+#footer img {
+  width: 80px;
+  margin-right: 5px;
 }
 
 
@@ -385,16 +418,18 @@ textarea {
   text-align: left;
   cursor: pointer;
   border-radius: 8px;
+  background-color: var(--color-primary);
+  margin-bottom: 8px;
 }
 
 
 .article-item:hover {
-  background-color: #1e1e1e;
+  background-color: var(--color-primary-dark);
 }
 
 
 .article-item p {
-  color: whitesmoke
+  color: var(--color-text-light)
 }
 
 
@@ -413,7 +448,7 @@ textarea {
 
 .subheader {
   font-size: 38px;
-  border-bottom: 1px #ccc;
+  border-bottom: 1px var(--color-border);
   padding-bottom: 10px;
 }
 
@@ -430,13 +465,13 @@ textarea {
 .article-item .date {
   display: block;
   width: 100%;
-  color: rgb(161, 159, 159);
+  color: var(--color-primary-light);
 }
 
 
 .article-item a {
   display: block;
-  color: #444;
+  color: var(--color-text-light);
   text-decoration: none;
   margin-top: 10px;
 }
@@ -682,7 +717,7 @@ textarea {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: #1b1b1b;
+  background-color: var(--color-bg-danger);
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   max-width: 600px;
@@ -691,7 +726,7 @@ textarea {
 
 .eliminated h2 {
   font-size: 1.5rem;
-  color: #868686;
+  color: var(--color-text-light);
   margin-bottom: 20px;
   text-align: center;
 }
@@ -709,32 +744,35 @@ body {
   background:
     repeating-linear-gradient(45deg,
       #0000 calc(-650% / 13) calc(50% / 13),
-      #100f0f 0 calc(100% / 13),
+      var(--color-primary) 0 calc(100% / 13),
       #0000 0 calc(150% / 13),
-      #100f0f 0 calc(200% / 13),
+      var(--color-secondary) 0 calc(200% / 13),
       #0000 0 calc(250% / 13),
-      #100f0f 0 calc(300% / 13)) calc(0px + var(--c-x)) calc(0px + var(--c-y)),
+      var(--color-primary) 0 calc(300% / 13)) calc(0px + var(--c-x)) calc(0px + var(--c-y)),
+
     repeating-linear-gradient(45deg,
       #0000 calc(-650% / 13) calc(50% / 13),
-      #100f0f 0 calc(100% / 13),
+      var(--color-secondary) 0 calc(100% / 13),
       #0000 0 calc(150% / 13),
-      #100f0f 0 calc(200% / 13),
+      var(--color-primary) 0 calc(200% / 13),
       #0000 0 calc(250% / 13),
-      #100f0f 0 calc(300% / 13)) calc(32px + var(--a-x)) calc(32px + var(--a-y)),
+      var(--color-secondary) 0 calc(300% / 13)) calc(32px + var(--a-x)) calc(32px + var(--a-y)),
+
     repeating-linear-gradient(-45deg,
       #0000 calc(-650% / 13) calc(50% / 13),
-      #100f0f 0 calc(100% / 13),
+      var(--color-primary) 0 calc(100% / 13),
       #0000 0 calc(150% / 13),
-      #100f0f 0 calc(200% / 13),
+      var(--color-secondary) 0 calc(200% / 13),
       #0000 0 calc(250% / 13),
-      #100f0f 0 calc(300% / 13)) calc(0px + var(--b-x)) calc(0px + var(--b-y)),
+      var(--color-primary) 0 calc(300% / 13)) calc(0px + var(--b-x)) calc(0px + var(--b-y)),
+
     repeating-linear-gradient(-45deg,
       #0000 calc(-650% / 13) calc(50% / 13),
-      #100f0f 0 calc(100% / 13),
+      var(--color-secondary) 0 calc(100% / 13),
       #0000 0 calc(150% / 13),
-      #100f0f 0 calc(200% / 13),
+      var(--color-primary) 0 calc(200% / 13),
       #0000 0 calc(250% / 13),
-      #100f0f 0 calc(300% / 13)) calc(32px + var(--a-x)) calc(32px + var(--a-y)) #1e1e1e;
+      var(--color-secondary) 0 calc(300% / 13)) calc(32px + var(--a-x)) calc(32px + var(--a-y)) var(--color-bg);
 
   background-size: 64px 64px;
   width: 100%;
