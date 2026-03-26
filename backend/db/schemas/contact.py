@@ -1,22 +1,16 @@
-from pydantic import BaseModel
+from datetime import datetime
 
-class ContactBase(BaseModel):
+from pydantic import BaseModel, EmailStr
+
+
+class ContactCreate(BaseModel):
     name: str
-    email: str
+    email: EmailStr
     message: str
 
-class Contact(ContactBase):
+
+class ContactResponse(ContactCreate):
     id: int
+    created_at: datetime
 
-    class Config:
-        orm_mode = True
-        from_attributes = True
-
-class ContactCreate(ContactBase):
-    pass
-
-
-class ContactPut(BaseModel):
-    name: str
-    email: str 
-    message: str
+    model_config = {"from_attributes": True}

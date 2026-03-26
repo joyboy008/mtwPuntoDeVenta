@@ -7,7 +7,7 @@ function ListarUsarios() {
   const columnsUsers = [
     { label: "Nombre", field: "name" },
     { label: "Username", field: "username" },
-    { label: "Caja", field: "cash_register" },
+    { label: "Estado", field: "is_active"},
     { label: "Rol", field: "role" },
   ];
   const fetchUsers = useCallback(async () => {

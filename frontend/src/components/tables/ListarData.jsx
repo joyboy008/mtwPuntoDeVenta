@@ -7,10 +7,7 @@ import Table from "./Table";
 const ListarData = memo(function ListarData({
   title,
   fetchFunction,
-  columns,
   searchFields,
-  onAddClient,
-  onAddProduct,
   whatIs,
 }) {
   const [data, setData] = useState([]);
@@ -18,7 +15,7 @@ const ListarData = memo(function ListarData({
   const [criteria, setCriteria] = useState("");
   const [quantities, setQuantities] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
+  const itemsPerPage = 4;
 
   useEffect(() => {
     setIsLoading(true);
@@ -29,7 +26,7 @@ const ListarData = memo(function ListarData({
           const dateB = parseDate(b.date);
           return dateB - dateA; // Orden ascendente
         });
-        if (whatIs === "Ventas") {
+        if (whatIs === "Citas") {
           setData(sortedData);
           setIsLoading(false);
         }
@@ -65,8 +62,11 @@ const ListarData = memo(function ListarData({
     if (criteria) {
       return data.filter((item) =>
         searchFields.some((field) =>
-          item[field]?.toString().toLowerCase().includes(criteria.toLowerCase())
-        )
+          item[field]
+            ?.toString()
+            .toLowerCase()
+            .includes(criteria.toLowerCase()),
+        ),
       );
     }
     return data;
@@ -106,14 +106,7 @@ const ListarData = memo(function ListarData({
       {isLoading ? (
         <Spinner animation="grow" variant="info" />
       ) : (
-        <Table
-          onAddProduct={onAddProduct}
-          onAddClient={onAddClient}
-          whatIs={whatIs}
-          columns={columns}
-          title={title}
-          data={currentData}
-        />
+        <Table title={title} data={currentData} whatIs={whatIs} />
       )}
 
       <PaginationControls

@@ -1,0 +1,303 @@
+:root {
+    /* 🎨 Paleta principal */
+    --color-bg: #fde4ec;
+    /* fondo principal */
+    --color-primary: #f8c8dc;
+    /* rosado suave */
+    --color-secondary: #f4b6cf;
+    /* rosado más marcado */
+    --color-bg-danger: rgb(255, 99, 99);
+
+    /* 🌷 Variantes útiles */
+    --color-primary-light: #fce1ec;
+    --color-primary-dark: #eaa3c2;
+
+    /* 🖋️ Texto */
+    --color-text: #5a4a52;
+    --color-text-light: #8a6f78;
+    --color-text-black: #171717;
+
+    /* ✨ Extras */
+    --color-white: #ffffff;
+    --color-border: #f3c6d6;
+}
+
+.input-citas {
+    background-color: var(--color-primary-light);
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    color: var(--color-text-light);
+    box-shadow: 0 0.4rem var(--color-primary-dark);
+    cursor: pointer;
+    border: 3px solid var(--color-border);
+}
+
+.input-citas:focus {
+    outline: 2px solid var(--color-border);
+}
+
+.input-citas {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.FormularioCita {
+    margin-top: 16px;
+    height: 450px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: var(--color-bg);
+    background: -webkit-linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+    background: linear-gradient(to right top, var(--color-bg), var(--color-primary-dark));
+    border: 3px solid var(--color-border);
+    border-radius: 16px;
+}
+
+
+
+/* Codigo de CardsCitas */
+.card {
+    max-width: 320px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-radius: 0.5rem;
+    background: var(--color-bg);
+    background: -webkit-linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+    background: linear-gradient(to right top, var(--color-bg), var(--color-primary-dark));
+    padding: 1rem;
+    border: 2px solid var(--color-border);
+    color: var(--color-text);
+    box-shadow: 0px 8px 12px 10px rgba(0, 0, 0, 0.144);
+}
+
+.icon {
+    height: 2rem;
+    width: 2rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    /* background-color: #153586; */
+    color: rgb(59, 130, 246);
+}
+
+.icon svg {
+    height: 1.25rem;
+    width: 1.25rem;
+}
+
+.content {
+    margin-left: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+}
+
+.title {
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.desc {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    color: var(--color-text-light);
+}
+
+.actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 0.5rem;
+    gap: 0.5rem;
+}
+
+.download,
+.notnow {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    border-radius: 0.5rem;
+    padding: 0.375rem 0.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: var(--color-primary-dark);
+    outline: 2px solid transparent;
+    border: 1px solid var(--color-border);
+}
+
+.download {
+    background-color: var(--color-bg);
+    font-weight: 600;
+}
+
+.download:hover {
+    background-color: var(--color-bg);
+}
+
+.notnow {
+    background-color: var(--color-bg);
+    font-weight: 500;
+}
+
+.notnow:hover {
+    background-color: var(--color-bg);
+}
+
+.close {
+    margin: -0.375rem -0.375rem -0.375rem auto;
+    height: 2rem;
+    width: 2rem;
+    display: inline-flex;
+    border-radius: 0.5rem;
+    background-color: var(--color-bg);
+    padding: 0.375rem;
+    color: var(--color-text-light);
+    border: none;
+}
+
+.close svg {
+    height: 1.25rem;
+    width: 1.25rem;
+}
+
+.close:hover {
+    background-color: var(--color-primary-dark);
+}
+
+
+/* Editar cita */
+.editar-cita-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding-bottom: 2rem;
+}
+
+.cita-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.cita-cliente {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    color: #222;
+}
+
+/* Badges de estado */
+.status-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+}
+
+.status-agendada {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.status-en-proceso {
+    background: #fff8e1;
+    color: #f57f17;
+}
+
+.status-finalizada {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-cancelada {
+    background: #fce4ec;
+    color: #c62828;
+}
+
+/* Botones de transición de estado */
+.status-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+/* Sección cotización */
+.quotation-section {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+}
+
+.quotation-readonly {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 0.75rem;
+}
+
+/* Loading */
+.cita-loading {
+    text-align: center;
+    color: #888;
+    padding: 2rem 0;
+}
+
+
+/* LabelsCitas */
+/* From Uiverse.io by andrew-demchenk0 */
+.div-label-cita {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label-cita {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 0px 6px;
+    gap: 8px;
+    height: 50px;
+    width: 350px;
+    border: none;
+    background: var(--color-primary-dark);
+    border-radius: 12px;
+    border: 2px solid var(--color-border);
+}
+
+.lable {
+    line-height: 14px;
+    font-size: 14px;
+    color: var(--color-text);
+}
+
+.label-cita:hover {
+    background: var(--color-secondary);
+}
+
+.svg-icon {
+    margin-right: -4px;
+}

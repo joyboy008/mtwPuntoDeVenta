@@ -57,12 +57,13 @@ function Header() {
                     className="dropbtn headermin"
                     htmlFor="dropdown-toggle-sales"
                   >
-                    Ventas
+                    Citas
                   </label>
 
                   <div className="dropdown-content">
-                    <Link to="/checkout">Realizar venta</Link>
-                    <Link to="/sales">Listar Ventas</Link>
+                    <Link to="/appointment">Realizar Cita</Link>
+                    <Link to="/list-appointments">Agendadas</Link>
+                    <Link to="/list-appointments-end">Terminadas</Link>
                   </div>
                 </div>
               ) : null}
@@ -77,9 +78,9 @@ function Header() {
                   </label>
                   <div className="dropdown-content">
                     {authProvider.checkRoutePermissions("admin") ? (
-                      <Link to="/new_product">Nuevo Producto</Link>
+                      <Link to="/catalog">Nuevo Producto</Link>
                     ) : null}
-                    <Link to="/productos">Listar Productos</Link>
+                    <Link to="/list-catalog">Listar Productos</Link>
                   </div>
                 </div>
               ) : null}

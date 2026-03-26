@@ -26,9 +26,8 @@ function ActualizarUsuario() {
   };
   const handleSubmit = () => {
     setLoading(true);
-
     api
-      .actualizarData("users", usuarioData, usuarioData.id)
+      .actualizarData("users", usuarioData.id, usuarioData)
       .then((response) => {
         setLoading(false);
         Swal.fire({

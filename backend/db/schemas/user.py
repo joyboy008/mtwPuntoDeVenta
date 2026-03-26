@@ -1,32 +1,29 @@
-from pydantic import BaseModel
 from typing import Optional
 
+from pydantic import BaseModel
+ 
+ 
 class UserBase(BaseModel):
     name: str
     username: str
-    password: str 
-    role: str
-    image: str
-    cash_register: float
-
-class User(UserBase):
-    id: int
-    is_active: bool
-
-    class Config:
-        orm_mode = True
-        from_attributes = True
-
+    role: str = "admin"
+ 
+ 
 class UserCreate(UserBase):
-    pass
-
-
-class UsuarioPut(BaseModel):
+    password: str
+ 
+ 
+class UserUpdate(BaseModel):
+    id: int
     name: str
     username: str
-    password: str 
     role: str
-    image: str
-    cash_register: float
-    is_active: Optional[bool]
-
+    password: Optional[str] = None
+    is_active: bool | None = None
+ 
+ 
+class UserResponse(UserBase):
+    id: int
+    is_active: bool
+ 
+    model_config = {"from_attributes": True}

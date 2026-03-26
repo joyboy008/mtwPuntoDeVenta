@@ -40,7 +40,7 @@ function Login() {
           token: response.data.token,
         };
         authProvider.saveSession(session);
-        navigate("/checkout");
+        navigate("/list-appointments");
       })
       .catch((err) => {
         setShowValidationAlert(true);
@@ -57,7 +57,7 @@ function Login() {
   };
   useEffect(() => {
     if (authProvider.checkAuth()) {
-      navigate("/checkout");
+      navigate("/list-appointments");
     }
     document.addEventListener("keydown", handleKeyDown);
     return () => {

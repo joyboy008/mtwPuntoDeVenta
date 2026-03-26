@@ -17,6 +17,16 @@ function Formulario({ esActualizacion, title, data, onChange, onSubmit }) {
       label: "Moderador",
     },
   ];
+  const StatusOptions = [
+    {
+      value: true,
+      label: "Activo",
+    },
+    {
+      value: false,
+      label: "Inactivo",
+    },
+  ];
   return (
     <Fragment>
       <br />
@@ -78,6 +88,18 @@ function Formulario({ esActualizacion, title, data, onChange, onSubmit }) {
                         />
                       </div>
                       <div className="input-field">
+                        <label>Estado</label>
+                        <Select
+                          type="text-local"
+                          name="is_active"
+                          value={data.is_active}
+                          autoComplete="none"
+                          onChange={onChange}
+                          options={StatusOptions}
+                          required
+                        />
+                      </div>
+                      <div className="input-field">
                         <label>Role</label>
                         <Select
                           type="text-local"
@@ -86,32 +108,6 @@ function Formulario({ esActualizacion, title, data, onChange, onSubmit }) {
                           autoComplete="none"
                           onChange={onChange}
                           options={rolesOptions}
-                          required
-                        />
-                      </div>
-                      <div className="input-field">
-                        <label>Image</label>
-                        <input
-                          type="text"
-                          name="image"
-                          autoComplete="none"
-                          // pattern="[0-9]{5}"
-                          title="Ej. image.png"
-                          value={data.image}
-                          onChange={onChange}
-                          placeholder="Imagen de usuario"
-                        />
-                        {/* <!-- Si no hay igss entonces que devuelva no en el backend --> */}
-                      </div>
-
-                      <div className="input-field">
-                        <label>Saldo en Caja</label>
-                        <input
-                          type="number"
-                          name="cash_register"
-                          value={data.cash_register}
-                          onChange={onChange}
-                          placeholder="Dinero"
                           required
                         />
                       </div>

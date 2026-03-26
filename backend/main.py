@@ -1,31 +1,39 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from db.database import engine, Base, get_db
-from routers import inventory, users, auth, clients, sales, chat, contact
+
+from db.database import Base, engine
+from db.models import Appointment, Contact, Quotation, QuotationItem, User
+from routers import appointments, auth, contact, quotations, users, servicecatalog
 
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI()
-origins = ["http://localhost:5173", "https://mtw.mralda.net", "http://mtw.mralda.net"]
+app = FastAPI(
+    title="Kathy Nails API",
+    description="Sistema de citas y cotizaciones para Kathy Nails",
+    version="1.0.0",
+)
+
+ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://localhost:3000",
+]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Routers
 app.include_router(auth.router)
-app.include_router(chat.router)
-app.include_router(sales.router)
-app.include_router(clients.router)
-app.include_router(inventory.router)
+app.include_router(users.router)
+app.include_router(appointments.router)
+app.include_router(quotations.router)
+app.include_router(servicecatalog.router)
 app.include_router(contact.router)
-app.include_router(users.router)  
 
 
-@app.on_event("startup")
-def startup_event():
-    get_db()
+@app.get("/health", tags=["Health"])
+def health_check() -> dict:
+    return {"status": "ok"}

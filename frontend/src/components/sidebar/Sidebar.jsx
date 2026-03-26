@@ -37,7 +37,7 @@ class Sidebar extends Component {
                 <FaWhatsapp /> {/* Icono de W */}
               </a>
               <a
-                href="https://www.instagram.com/kathynails00"
+                href="https://www.instagram.com/kathy.nails00"
                 target="_blank"
                 rel="noreferrer"
                 className="instagram-link"

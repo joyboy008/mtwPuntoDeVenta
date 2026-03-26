@@ -1,6 +1,6 @@
 // Se utiliza para pagina no encontrada
 
-import logo from "../../assets/images/logo-mtw-header.png";
+import logo from "../../assets/images/logo unias mila.png";
 import "./error-styles.css";
 import { NavLink } from "react-router-dom";
 

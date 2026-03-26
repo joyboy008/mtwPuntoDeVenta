@@ -1,9 +1,33 @@
+:root {
+  /* 🎨 Paleta principal */
+  --color-bg: #fde4ec;
+  /* fondo principal */
+  --color-primary: #f8c8dc;
+  /* rosado suave */
+  --color-secondary: #f4b6cf;
+  /* rosado más marcado */
+  --color-bg-danger: rgb(255, 99, 99);
+
+  /* 🌷 Variantes útiles */
+  --color-primary-light: #fce1ec;
+  --color-primary-dark: #eaa3c2;
+
+  /* 🖋️ Texto */
+  --color-text: #5a4a52;
+  --color-text-light: #8a6f78;
+  --color-text-black: #171717;
+
+  /* ✨ Extras */
+  --color-white: #ffffff;
+  --color-border: #f3c6d6;
+}
+
 .buscador-container {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px 20px;
-  background-color: #18181833;
+  background-color: var(--color-bg);
   border-radius: 12px;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.26);
   width: 100%;
@@ -22,9 +46,9 @@
   width: 100%;
   padding: 14px 50px 14px 20px;
   font-size: 16px;
-  color: #48b5e4;
-  background-color: #1a1a1a;
-  border: 1px solid #049ee0;
+  color: var(--color-text);
+  background-color: var(--color-primary-dark);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   outline: none;
   transition: all 0.3s ease;

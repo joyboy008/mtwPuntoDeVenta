@@ -15,14 +15,14 @@ function Buttons({ endpoint, data, whatIs, onAddProduct, onAddClient }) {
           Seleccionar
         </a>
       );
-    } else if (whatIs === "Ventas") {
+    } else if (whatIs === "Citas") {
       return (
         <>
-          <NavLink className="dropbtn succes" to={`/sales/${data}`}>
+          <NavLink className="dropbtn succes" to={`/appointment/${data}`}>
             Detalles
           </NavLink>
           {authProvider.checkRoutePermissions("admin") ? (
-            <NavLink className="dropbtn danger" to={`/sales/delete/${data}`}>
+            <NavLink className="dropbtn danger" to={`/appointments/delete/${data}`}>
               Eliminar
             </NavLink>
           ) : null}

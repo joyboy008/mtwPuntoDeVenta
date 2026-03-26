@@ -1,3 +1,27 @@
+:root {
+    /* 🎨 Paleta principal */
+    --color-bg: #fde4ec;
+    /* fondo principal */
+    --color-primary: #f8c8dc;
+    /* rosado suave */
+    --color-secondary: #f4b6cf;
+    /* rosado más marcado */
+    --color-bg-danger: rgb(255, 99, 99);
+
+    /* 🌷 Variantes útiles */
+    --color-primary-light: #fce1ec;
+    --color-primary-dark: #eaa3c2;
+
+    /* 🖋️ Texto */
+    --color-text: #5a4a52;
+    --color-text-light: #8a6f78;
+    --color-text-black: #171717;
+
+    /* ✨ Extras */
+    --color-white: #ffffff;
+    --color-border: #f3c6d6;
+}
+
 /* Reglas para la impresión */
 @media print {
 
@@ -18,10 +42,10 @@
 
 /* Estilo principal para la tabla */
 main.table {
-    width: 82vw;
-    height: 80vh;
+    width: 350px;
+    height: 980px;
     min-height: 650px;
-    background-color: #1a1a1a;
+    background-color: var(--color-bg);
     backdrop-filter: blur(12px);
     box-shadow: 0 .4rem .8rem #0005;
     border-radius: .8rem;
@@ -31,8 +55,8 @@ main.table {
 
 .table__sale_details {
     width: 100%;
-    color: #1a1a1a;
-    background-color: #1a1a1a;
+    color: var(--color-text-light);
+    background-color: var(--color-primary-dark);
     backdrop-filter: blur(12px);
     box-shadow: 0 .4rem .8rem #0005;
     border-radius: .8rem;
@@ -43,10 +67,10 @@ main.table {
 /* Cabecera de la tabla */
 .table__header {
     width: 100%;
-    height: 10%;
-    background-color: #424242;
+    height: 80px;
+    background-color: var(--color-primary-dark);
     padding: .8rem 1rem;
-    color: #ffffff;
+    color: var(--color-text);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,8 +79,8 @@ main.table {
 /* Cuerpo de la tabla */
 .table__body {
     width: 95%;
-    max-height: calc(89% - 1.6rem);
-    background-color: #fffb;
+    max-height: calc(95% - 1.6rem);
+    background-color: var(--color-primary-light);
     margin: .8rem auto;
     border-radius: .6rem;
     overflow: auto;
@@ -70,7 +94,7 @@ main.table {
 
 .table__body::-webkit-scrollbar-thumb {
     border-radius: .5rem;
-    background-color: #0004;
+    background-color: var(--color-primary-light);
     visibility: hidden;
 }
 
@@ -101,7 +125,11 @@ td img {
 
 /* Estilos para las filas */
 tbody tr:nth-child(even) {
-    background-color: #988dfc13;
+    background-color: var(--color-primary-light);
+}
+
+tbody {
+    border-bottom: 2px solid var(--color-border);
 }
 
 tbody tr {
@@ -115,7 +143,7 @@ tbody tr.hide {
 }
 
 tbody tr:hover {
-    background-color: rgba(209, 220, 255, 0.342) !important;
+    background-color: rgba(255, 209, 241, 0.342) !important;
 }
 
 tbody tr td,
@@ -145,11 +173,12 @@ thead th {
 }
 
 .table__head {
-    background: #9e9d9d !important;
+    background: var(--color-secondary) !important;
+    border-bottom: 2px solid var(--color-border);
 }
 
 thead th:hover {
-    color: #049ee0;
+    color: var(--color-text-light);
     transition: 0.25s;
 }
 

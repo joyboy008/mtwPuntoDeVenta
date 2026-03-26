@@ -1,8 +1,9 @@
-from decouple import config
+# utils/constants.py
+import os
+from dotenv import load_dotenv
 
-DATABASE_URL = config("DATABASE_URL")
-JWT_SECRET = config("JWT_SECRET")
-JWT_ALGORITHM = config("JWT_ALGORITHM")
-OPENAI_API_KEY = config("OPENAI_API_KEY")
+load_dotenv()
 
-
+DATABASE_URL = os.getenv("DATABASE_URL")
+JWT_SECRET = os.getenv("JWT_SECRET")
+JWT_ALGORITHM = os.getenv("JWT_ALGORITHM", "HS256")
