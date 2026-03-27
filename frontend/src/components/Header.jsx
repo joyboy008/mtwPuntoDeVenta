@@ -51,69 +51,18 @@ function Header() {
             </div>
             <div className="menu">
               {authProvider.checkRoutePermissions("moderador") ? (
-                <div className="dropdown">
-                  <input type="checkbox" id="dropdown-toggle-sales" />
-                  <label
-                    className="dropbtn headermin"
-                    htmlFor="dropdown-toggle-sales"
-                  >
-                    Citas
-                  </label>
-
-                  <div className="dropdown-content">
-                    <Link to="/appointment">Realizar Cita</Link>
-                    <Link to="/list-appointments">Agendadas</Link>
-                    <Link to="/list-appointments-end">Terminadas</Link>
-                  </div>
-                </div>
-              ) : null}
-              {authProvider.checkRoutePermissions("moderador") ? (
-                <div className="dropdown">
-                  <input type="checkbox" id="dropdown-toggle-products" />
-                  <label
-                    className="dropbtn headermin"
-                    htmlFor="dropdown-toggle-products"
-                  >
-                    Productos
-                  </label>
-                  <div className="dropdown-content">
-                    {authProvider.checkRoutePermissions("admin") ? (
-                      <Link to="/catalog">Nuevo Producto</Link>
-                    ) : null}
-                    <Link to="/list-catalog">Listar Productos</Link>
-                  </div>
-                </div>
-              ) : null}
-              {authProvider.checkRoutePermissions("moderador") ? (
-                <div className="dropdown">
-                  <input type="checkbox" id="dropdown-toggle-pacientes" />
-                  <label
-                    className="dropbtn headermin"
-                    htmlFor="dropdown-toggle-pacientes"
-                  >
-                    Clientes
-                  </label>
-                  <div className="dropdown-content">
-                    <Link to="/new_client">Nuevo Cliente</Link>
-                    <Link to="/clientes">Listar Clientes</Link>
-                  </div>
-                </div>
+                <Link className="dropbtn succes" to="/appointment">
+                  Citas
+                </Link>
               ) : null}
               {authProvider.checkRoutePermissions("admin") ? (
-                <div className="dropdown">
-                  <input type="checkbox" id="dropdown-toggle-usuarios" />
-                  <label
-                    className="dropbtn headermin"
-                    htmlFor="dropdown-toggle-usuarios"
-                  >
-                    Usuarios
-                  </label>
-                  <div className="dropdown-content">
-                    <Link to="/new_user">Nuevo Usuario</Link>
-                    <Link to="/users">Listar Usuarios</Link>
-                  </div>
-                </div>
-              ) : null}
+                <Link className="dropbtn succes" to="/users">
+                  Usuarios
+                </Link>
+              ) : // <Link to="/catalog"> Producto </Link>
+              // <Link to="/new_user">Nuevo Usuario</Link>
+              //  <Link to="/users">Listar Usuarios</Link>
+              null}
               {!!authProvider.checkAuth() ? (
                 <div className="dropdown">
                   <button
@@ -128,6 +77,9 @@ function Header() {
                   Login
                 </Link>
               )}
+              {/* // <Link to="/catalog"> Producto </Link> */}
+              {/* // <Link to="/new_user">Nuevo Usuario</Link> */}
+              {/* // <Link to="/users">Listar Usuarios</Link> */}
             </div>
           </nav>
         </header>

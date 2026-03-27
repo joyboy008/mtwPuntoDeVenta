@@ -48,7 +48,7 @@ const router = createBrowserRouter([
     path: "/appointment",
     element: <CrearCita />,
     loader: requireAuth(async () => {
-      if (!authProvider.checkRoutePermissions("admin")) {
+      if (!authProvider.checkRoutePermissions("moderador")) {
         return redirect("/");
       } else {
         return {};

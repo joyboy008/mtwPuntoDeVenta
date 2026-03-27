@@ -4,6 +4,7 @@ import api from "../../utils/api";
 import DefaultLayout from "../../components/DefaultLayout";
 import Footer from "../../components/Footer";
 import { Fragment } from "react";
+import HeaderCitas from "./utils/HeaderCitas";
 
 function ListarCitasTerminadas() {
   const fetchSAppointments = useCallback(async () => {
@@ -20,18 +21,21 @@ function ListarCitasTerminadas() {
 
   return (
     <Fragment>
-      <DefaultLayout title="Citas">
-        <ListarData
-          title="Citas"
-          fetchFunction={fetchSAppointments}
-          searchFields={[
-            "client_name",
-            "client_phone",
-            "scheduled_at",
-            "reason",
-          ]}
-          whatIs={"Citas_Terminadas"}
-        />
+      <DefaultLayout title="Citas Finalizadas">
+        <section className="sectionCrearCita">
+          <HeaderCitas component="Terminadas" />
+          <ListarData
+            title="Citas"
+            fetchFunction={fetchSAppointments}
+            searchFields={[
+              "client_name",
+              "client_phone",
+              "scheduled_at",
+              "reason",
+            ]}
+            whatIs={"Citas_Terminadas"}
+          />
+        </section>
       </DefaultLayout>
       <Footer />
     </Fragment>

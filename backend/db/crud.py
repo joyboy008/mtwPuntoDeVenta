@@ -116,6 +116,7 @@ def get_appointments_for_date(db: Session, target_date: date) -> list[Appointmen
         .filter(
             func.date(func.timezone('America/Guatemala', Appointment.scheduled_at)) == target_date,
             Appointment.deleted_at.is_(None),
+            Appointment.status == AppointmentStatus.AGENDADA,
         )
         .order_by(Appointment.scheduled_at)
         .all()
@@ -140,7 +141,7 @@ def get_appointments_by_status(
 def get_appointment(db: Session, id: int):
     return (
         db.query(Appointment)
-        .options(joinedload(Appointment.quotation))  # 👈 clave
+        .options(joinedload(Appointment.quotation))
         .filter(Appointment.id == id, Appointment.deleted_at.is_(None))
         .first()
     )

@@ -6,6 +6,7 @@ import QuotationPanel from "../../components/quotation/QuotationPanel";
 import Swal from "sweetalert2";
 import "./utils/styles.css";
 import { services } from "../../utils/constants";
+import HeaderCitas from "./utils/HeaderCitas";
 
 const STATUSES_ALLOWED_FOR_QUOTATION = ["agendada", "en_proceso"];
 
@@ -139,7 +140,8 @@ function VerCitaTerminada() {
 
   return (
     <DefaultLayout title="Detalle de Cita">
-      <section className="editar-cita-container">
+      <section className="sectionCrearCita">
+        <HeaderCitas component="Terminadas" />
         {/* Header con nombre y estado */}
         <div className="cita-header">
           <span className={`status-badge ${STATUS_COLORS[cita.status]}`}>

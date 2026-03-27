@@ -2,12 +2,13 @@ import { useCallback } from "react";
 import DefaulLayout from "../../components/DefaultLayout";
 import ListarData from "../../components/tables/ListarData";
 import api from "../../utils/api";
+import HeaderUsers from "./utils/HeaderUsers";
 
 function ListarUsarios() {
   const columnsUsers = [
     { label: "Nombre", field: "name" },
     { label: "Username", field: "username" },
-    { label: "Estado", field: "is_active"},
+    { label: "Estado", field: "is_active" },
     { label: "Rol", field: "role" },
   ];
   const fetchUsers = useCallback(async () => {
@@ -22,15 +23,17 @@ function ListarUsarios() {
 
   return (
     <DefaulLayout title="Usuarios">
-      <div>
-        <ListarData
-          title="Users"
-          fetchFunction={fetchUsers}
-          columns={columnsUsers}
-          searchFields={["username", "name", "role"]}
-          whatIs={"Users"}
-        />
-      </div>
+      <section className="sectionCrearCita">
+        <HeaderUsers component="Crear Producto" />
+
+        <div>
+          <ListarData
+            title="Users"
+            fetchFunction={fetchUsers}
+            searchFields={["username", "name", "role"]}
+          />
+        </div>
+      </section>
     </DefaulLayout>
   );
 }

@@ -81,6 +81,7 @@ export function FormularioEditarCita({
       {/* Botones de cambio de estado */}
       {STATUS_TRANSITIONS[cita.status]?.length > 0 && (
         <div className="status-actions">
+          <br />
           {STATUS_TRANSITIONS[cita.status].map((transition) => (
             <button
               key={transition.value}

@@ -11,6 +11,8 @@ import {
   STATUS_COLORS,
 } from "../../utils/constants";
 import FormularioEditarCita from "./utils/FormularioEditarCita";
+import LabelCitas from "./utils/LabelCitas";
+import HeaderCitas from "./utils/HeaderCitas";
 
 function EditarCita() {
   const { id } = useParams();
@@ -20,6 +22,7 @@ function EditarCita() {
   const [form, setForm] = useState(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [appointmentsSaved, setAppointmentsSaved] = useState([]);
 
   useEffect(() => {
     api
@@ -49,6 +52,12 @@ function EditarCita() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    const dateOnly = value.split("T")[0];
+    api.getCitasPorFecha(dateOnly).then((res) => {
+      // console.log(res);
+      setAppointmentsSaved(res.data);
+    });
+    // .catch((err) => console.log(err));
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -118,7 +127,8 @@ function EditarCita() {
 
   return (
     <DefaultLayout title="Detalle de Cita">
-      <section className="editar-cita-container">
+      <section className="sectionCrearCita">
+        <HeaderCitas component="Crear Cita" />
         {/* Header con nombre y estado */}
         <div className="cita-header">
           <span className={`status-badge ${STATUS_COLORS[cita.status]}`}>
@@ -137,7 +147,17 @@ function EditarCita() {
           handleStatusChange={handleStatusChange}
         />
 
-        {/* aquii debe de aparecer el componente de citas agendadas */}
+        {appointmentsSaved.length > 0 ? (
+          <LabelCitas appointmentsSaved={appointmentsSaved} />
+        ) : (
+          <div className="div-label-cita">
+            <div className="out-label-cita">
+              <span className="lable">
+                Modifica la fecha para verificar si hay citas.
+              </span>
+            </div>
+          </div>
+        )}
 
         {/* Panel de cotización — solo si la cita lo permite */}
         {STATUSES_ALLOWED_FOR_QUOTATION.includes(cita.status) && (

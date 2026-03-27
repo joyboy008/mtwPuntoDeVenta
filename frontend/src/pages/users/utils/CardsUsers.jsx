@@ -6,7 +6,7 @@ import "./styles.css";
 import Swal from "sweetalert2";
 import api from "../../../utils/api";
 
-export const CardsCitas = ({ cita }) => {
+export const CardsUsers = ({ user }) => {
   const formatDateTime = (value) => {
     const date = new Date(value);
 
@@ -32,8 +32,6 @@ export const CardsCitas = ({ cita }) => {
       cancelButtonText: "Cancelar",
     });
 
-    if (!confirm.isConfirmed) return;
-
     try {
       const res = await api.cambiarStatusCita(id, newStatus);
       Swal.fire({
@@ -52,42 +50,25 @@ export const CardsCitas = ({ cita }) => {
   };
 
   return (
-    <div className="card">
-      <div className="content">
-        <span className="title">{cita.client_name}</span>
+    <div className="card-user">
+      <div className="content-user">
+        <div>
+          <span className="title">{user.name}</span>
+        </div>
 
         <div className="desc">
-          📌 Servicio: {cita.reason} <br />
-          💵 Anticipo: Q{cita.client_advance} <br />
-          📅 {formatDateTime(cita.scheduled_at)}
+          💻Username: {user.username} <br />
+          👩‍🦰Role: {user.role} <br />
+          🫥Status: {user.is_active ? "Activo" : "Inactivo"}
         </div>
         <div>
-          <br />
-
-          <NavLink className="dropbtn succes" to={`/appointment/${cita.id}`}>
-            Detalles
+          <NavLink className="dropbtn succes" to={`/users/${user.id}`}>
+            Editar
           </NavLink>
-
-          {authProvider.checkRoutePermissions("admin") ? (
-            <button
-              className="dropbtn danger"
-              onClick={() => handleStatusChange(cita.id, "cancelada")}
-            >
-              Eliminar
-            </button>
-          ) : null}
         </div>
       </div>
-      <a
-        href={`https://wa.me/502${cita.client_phone}`}
-        target="_blank"
-        rel="noreferrer"
-        className="close"
-      >
-        <FaWhatsapp />
-      </a>
     </div>
   );
 };
 
-export default CardsCitas;
+export default CardsUsers;

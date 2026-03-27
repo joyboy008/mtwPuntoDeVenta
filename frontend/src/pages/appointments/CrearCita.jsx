@@ -5,6 +5,7 @@ import "./utils/styles.css";
 import Swal from "sweetalert2";
 import FormularioCrearCita from "./utils/FormularioCrearCita";
 import LabelCitas from "./utils/LabelCitas";
+import HeaderCitas from "./utils/HeaderCitas";
 
 function CrearCita() {
   const initialForm = {
@@ -29,7 +30,7 @@ function CrearCita() {
 
   const handleChangeDate = (e) => {
     const { name, value } = e.target;
-    const dateOnly = value.split("T")[0]; // "2026-03-25"
+    const dateOnly = value.split("T")[0];
 
     api
       .getCitasPorFecha(dateOnly)
@@ -74,14 +75,23 @@ function CrearCita() {
   return (
     <DefaultLayout title="Crear Cita">
       <section className="sectionCrearCita">
+        <HeaderCitas component="Crear Cita" />
         <FormularioCrearCita
           form={form}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
           handleChangeDate={handleChangeDate}
         />
-        {appointmentsSaved.length > 0 && (
+        {appointmentsSaved.length > 0 ? (
           <LabelCitas appointmentsSaved={appointmentsSaved} />
+        ) : (
+          <div className="div-label-cita">
+            <div className="out-label-cita">
+              <span className="lable">
+                Modifica la Fecha para verificar si hay citas.
+              </span>
+            </div>
+          </div>
         )}
 
         {/* Agregar Un formulario que traiga las citas del dia seleccionado */}

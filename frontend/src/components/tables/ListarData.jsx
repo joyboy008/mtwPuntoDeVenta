@@ -3,17 +3,16 @@ import Spinner from "react-bootstrap/Spinner";
 import Buscador from "../buscador/Buscador";
 import PaginationControls from "./PaginationControls";
 import Table from "./Table";
+import TableUsers from "./TableUsers";
 
 const ListarData = memo(function ListarData({
   title,
   fetchFunction,
   searchFields,
-  whatIs,
 }) {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [criteria, setCriteria] = useState("");
-  const [quantities, setQuantities] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 4;
 
@@ -21,15 +20,6 @@ const ListarData = memo(function ListarData({
     setIsLoading(true);
     fetchFunction()
       .then((response) => {
-        const sortedData = (response.data || []).sort((a, b) => {
-          const dateA = parseDate(a.date);
-          const dateB = parseDate(b.date);
-          return dateB - dateA; // Orden ascendente
-        });
-        if (whatIs === "Citas") {
-          setData(sortedData);
-          setIsLoading(false);
-        }
         setData(response.data || []);
         setIsLoading(false);
       })
@@ -38,25 +28,6 @@ const ListarData = memo(function ListarData({
         setIsLoading(false);
       });
   }, [fetchFunction]);
-
-  const parseDate = (dateString) => {
-    if (!dateString) {
-      return;
-    }
-    const [datePart, timePart] = dateString.split(" ");
-    const [day, month, year] = datePart.split("/").map(Number);
-    const [hours, minutes] = timePart.split(":").map(Number);
-    const date = new Date(year, month - 1, day, hours, minutes);
-    const offsetGuatemala = date.getTimezoneOffset() + 360;
-    return new Date(date.getTime() - offsetGuatemala * 60 * 1000);
-  };
-
-  const handleQuantityChange = (id, value) => {
-    setQuantities((prevQuantities) => ({
-      ...prevQuantities,
-      [id]: value,
-    }));
-  };
 
   const getFilteredData = (data) => {
     if (criteria) {
@@ -105,10 +76,11 @@ const ListarData = memo(function ListarData({
       />
       {isLoading ? (
         <Spinner animation="grow" variant="info" />
+      ) : title === "Users" ? (
+        <TableUsers title={title} data={currentData} />
       ) : (
-        <Table title={title} data={currentData} whatIs={whatIs} />
+        <Table title={title} data={currentData} />
       )}
-
       <PaginationControls
         currentPage={currentPage}
         totalPages={totalPages}

@@ -1,7 +1,7 @@
 import "./styles_table.css";
-import CardsCitas from "../../pages/appointments/utils/CardsCitas";
+import CardsUsers from "../../pages/users/utils/CardsUsers";
 
-function Table({ title, data }) {
+function TableUsers({ title, data }) {
   return (
     <main className="table" id="customers_table">
       <section className="table__header">
@@ -10,10 +10,10 @@ function Table({ title, data }) {
       <section className="table__body">
         <table>
           <tbody>
-            {data.map((cita) => (
-              <tr key={cita.id}>
+            {data.map((user) => (
+              <tr key={user.id}>
                 <td>
-                  <CardsCitas cita={cita} />
+                  <CardsUsers user={user} />
                 </td>
               </tr>
             ))}
@@ -24,4 +24,4 @@ function Table({ title, data }) {
   );
 }
 
-export default Table;
+export default TableUsers;

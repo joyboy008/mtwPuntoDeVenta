@@ -43,8 +43,8 @@
 /* Estilo principal para la tabla */
 main.table {
     width: 350px;
-    height: 980px;
-    min-height: 650px;
+    /* height: 980px; */
+    min-height: 450px;
     background-color: var(--color-bg);
     backdrop-filter: blur(12px);
     box-shadow: 0 .4rem .8rem #0005;

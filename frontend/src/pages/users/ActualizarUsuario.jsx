@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import DefaulLayout from "../../components/DefaultLayout";
-import FormularioUsuario from "../../components/formularios/FormularioUsuario";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import api from "../../utils/api";
 import Swal from "sweetalert2";
 import Spinner from "react-bootstrap/Spinner";
+import FormularioEditarUsuario from "./utils/FormularioEditarUsuario";
 
 function ActualizarUsuario() {
   const navigate = useNavigate();
@@ -51,12 +51,10 @@ function ActualizarUsuario() {
           <h1>cargando...</h1>
         </div>
       ) : (
-        <FormularioUsuario
-          esActualizacion={true}
-          title={"Actualizar Usuario"}
-          data={usuarioData}
-          onChange={handleChange}
-          onSubmit={handleSubmit}
+        <FormularioEditarUsuario
+          form={usuarioData}
+          handleSubmit={handleSubmit}
+          handleChange={handleChange}
         />
       )}
 
