@@ -1,5 +1,6 @@
 import React from "react";
 import { services, STATUS_TRANSITIONS } from "../../../utils/constants";
+import { Link } from "react-router-dom";
 
 export function FormularioEditarCita({
   form,
@@ -72,9 +73,14 @@ export function FormularioEditarCita({
         />
 
         {isCitaEditable && (
-          <button className="dropbtn succes" type="submit" disabled={saving}>
-            {saving ? "Guardando..." : "Guardar cambios"}
-          </button>
+          <div>
+            <button className="dropbtn succes" type="submit" disabled={saving}>
+              {saving ? "Guardando..." : "Guardar cambios"}
+            </button>
+            <Link className="dropbtn danger" to="/list-appointments">
+              Regresar
+            </Link>
+          </div>
         )}
       </form>
 

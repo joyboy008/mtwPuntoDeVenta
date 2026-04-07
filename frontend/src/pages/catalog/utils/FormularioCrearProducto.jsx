@@ -1,5 +1,6 @@
 import React from "react";
 import { services } from "../../../utils/constants";
+import { Link } from "react-router-dom";
 
 export function FormularioCrearProducto({ form, handleChange, handleSubmit }) {
   return (
@@ -47,10 +48,14 @@ export function FormularioCrearProducto({ form, handleChange, handleSubmit }) {
           </option>
         ))}
       </select>
-
-      <button className="dropbtn succes" type="submit">
-        Guardar Producto
-      </button>
+      <div>
+        <button className="dropbtn succes" type="submit">
+          Guardar Producto
+        </button>
+        <Link className="dropbtn danger" to="/list-catalog">
+          Regresar
+        </Link>
+      </div>
     </form>
   );
 }

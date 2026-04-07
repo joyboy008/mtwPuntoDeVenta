@@ -51,12 +51,12 @@ function Header() {
             </div>
             <div className="menu">
               {authProvider.checkRoutePermissions("moderador") ? (
-                <Link className="dropbtn succes" to="/appointment">
+                <Link className="dropbtn succes headermin" to="/appointment">
                   Citas
                 </Link>
               ) : null}
               {authProvider.checkRoutePermissions("admin") ? (
-                <Link className="dropbtn succes" to="/users">
+                <Link className="dropbtn succes headermin" to="/users">
                   Usuarios
                 </Link>
               ) : // <Link to="/catalog"> Producto </Link>
@@ -64,16 +64,14 @@ function Header() {
               //  <Link to="/users">Listar Usuarios</Link>
               null}
               {!!authProvider.checkAuth() ? (
-                <div className="dropdown">
-                  <button
-                    className="dropbtn danger headermin"
-                    onClick={handleCloseSession}
-                  >
-                    {user ? <span>{user.username}</span> : <span>Login</span>}
-                  </button>
-                </div>
+                <button
+                  className="dropbtn danger headermin"
+                  onClick={handleCloseSession}
+                >
+                  {user ? <span>{user.username}</span> : <span>Login</span>}
+                </button>
               ) : (
-                <Link className="dropbtn succes" to="/login">
+                <Link className="dropbtn succes headermin" to="/login">
                   Login
                 </Link>
               )}

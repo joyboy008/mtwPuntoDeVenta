@@ -17,6 +17,8 @@ import VerCitaTerminada from "./pages/appointments/VerCitaTerminada";
 // import EliminarVenta from "./pages/checkout/EliminarVenta";
 
 import CrearProducto from "./pages/catalog/CrearProducto";
+import ListarProductos from "./pages/catalog/ListarProductos";
+import ActualizarProducto from "./pages/catalog/ActualizarProducto";
 
 import ActualizarUsuario from "./pages/users/ActualizarUsuario";
 import CrearUsuario from "./pages/users/CrearUsuarios";
@@ -91,6 +93,29 @@ const router = createBrowserRouter([
         return redirect("/");
       } else {
         return {};
+      }
+    }),
+  },
+  {
+    path: "/list-catalog",
+    element: <ListarProductos />,
+    loader: requireAuth(async () => {
+      if (!authProvider.checkRoutePermissions("admin")) {
+        return redirect("/");
+      } else {
+        return {};
+      }
+    }),
+  },
+  {
+    path: "/catalog/:service_id",
+    element: <ActualizarProducto />,
+    loader: requireAuth(async ({ params }) => {
+      if (!authProvider.checkRoutePermissions("admin")) {
+        return redirect("/");
+      } else {
+        const response = await api.getData("catalog", params.service_id);
+        return response.data;
       }
     }),
   },

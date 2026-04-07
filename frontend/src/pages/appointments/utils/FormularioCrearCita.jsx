@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.css";
 import { services } from "../../../utils/constants";
+import { Link } from "react-router-dom";
 
 export function FormularioCrearCita({
   form,
@@ -74,10 +75,14 @@ export function FormularioCrearCita({
             required
           />
         </div>
-
-        <button className="dropbtn succes" type="submit">
-          Guardar Cita
-        </button>
+        <div>
+          <button className="dropbtn succes" type="submit">
+            Guardar Cita
+          </button>
+          <Link className="dropbtn danger" to="/list-appointments">
+            Regresar
+          </Link>
+        </div>
       </div>
     </form>
   );

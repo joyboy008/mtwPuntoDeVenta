@@ -3,6 +3,7 @@ import "./utils/styles.css";
 import api from "../../utils/api";
 import FormularioCrearProducto from "./utils/FormularioCrearProducto";
 import DefaultLayout from "../../components/DefaultLayout";
+import HeaderUsers from "../users/utils/HeaderUsers";
 
 const CrearProducto = () => {
   const initialForm = {
@@ -41,11 +42,14 @@ const CrearProducto = () => {
   };
   return (
     <DefaultLayout title={"Crear Producto"}>
-      <FormularioCrearProducto
-        form={form}
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-      />
+      <section className="sectionCrearCita">
+        <HeaderUsers component="Crear Producto" />
+        <FormularioCrearProducto
+          form={form}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+        />
+      </section>
     </DefaultLayout>
   );
 };

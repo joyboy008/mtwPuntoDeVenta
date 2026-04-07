@@ -3,7 +3,7 @@
 import { Fragment, Component } from "react";
 import { FaFacebook, FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md"; // Importar el ícono de correo electrónico
-import "./sidebar-styles.css"
+import "./sidebar-styles.css";
 
 class Sidebar extends Component {
   render() {
@@ -11,11 +11,6 @@ class Sidebar extends Component {
       <aside id="sidebar">
         {this.props.blog === "true" && (
           <Fragment>
-            <div id="nav-blog" className="sidebar-item">
-              <h3>Dirección</h3>
-              <p>09009 - San Juan Ostuncalco, Quetzaltenango, Guatemala</p>
-              <p>Telefono: +(502) 3046-7979</p>
-            </div>
             <div id="search" className="sidebar-item">
               <h3>Redes Sociales</h3>
               <a
@@ -45,15 +40,10 @@ class Sidebar extends Component {
               >
                 <FaInstagram /> {/* Icono de W */}
               </a>
-              {/* <a */}
-                {/* href="mailto:mrlntechworks@icloud.com" */}
-                {/* target="_blank" */}
-                {/* rel="noreferrer" */}
-                {/* className="email-link" */}
-                {/* aria-label="Enviar un email a MrlnTechWorks" */}
-              {/* > */}
-                {/* <MdEmail /> Icono de Email */}
-              {/* </a> */}
+            </div>
+            <div id="nav-blog" className="sidebar-item">
+              <h3>Dirección</h3>
+              <p>San Juan Ostuncalco, Quetzaltenango, Guatemala</p>
             </div>
           </Fragment>
         )}

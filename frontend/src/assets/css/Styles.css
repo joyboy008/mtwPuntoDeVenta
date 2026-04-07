@@ -71,6 +71,7 @@ nav .title {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 12px;
 }
 
 header nav .title h2 {
@@ -509,7 +510,7 @@ textarea {
 
   .header nav {
     height: 100%;
-    padding-top: 12px;
+    /* padding-top: 12px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -518,6 +519,7 @@ textarea {
 
   nav .title {
     margin: 0 5px;
+    padding-top: 0px;
   }
 
   .header nav .menu {
@@ -620,9 +622,9 @@ textarea {
     justify-content: space-around;
   }
 
-  .title .logo-line {
+  /* .title .logo-line {
     width: 64px;
-  }
+  } */
 
 
   .header nav .menu {

@@ -4,6 +4,7 @@ import Buscador from "../buscador/Buscador";
 import PaginationControls from "./PaginationControls";
 import Table from "./Table";
 import TableUsers from "./TableUsers";
+import TableProducts from "./TableProducts";
 
 const ListarData = memo(function ListarData({
   title,
@@ -78,6 +79,8 @@ const ListarData = memo(function ListarData({
         <Spinner animation="grow" variant="info" />
       ) : title === "Users" ? (
         <TableUsers title={title} data={currentData} />
+      ) : title === "Productos" ? (
+        <TableProducts title={title} data={currentData} />
       ) : (
         <Table title={title} data={currentData} />
       )}

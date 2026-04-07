@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 export function HeaderUsers(component) {
   const OPTIONS = [
     { value: "/catalog", label: "Crear Producto" },
-    { value: "/list-catalog", label: "Listar Productos" },
+    { value: "/list-catalog", label: "Productos" },
+    { value: "/users", label: "Usuarios" },
   ];
   return (
     <div>

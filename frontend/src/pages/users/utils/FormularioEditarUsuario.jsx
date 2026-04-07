@@ -1,5 +1,6 @@
 import React from "react";
 import { Roles } from "../../../utils/constants";
+import { Link } from "react-router-dom";
 
 export function FormularioEditarUsuario({ form, handleSubmit, handleChange }) {
   return (
@@ -55,9 +56,14 @@ export function FormularioEditarUsuario({ form, handleSubmit, handleChange }) {
             <option value={false}>Desactivado</option>
           </select>
         </div>
-        <button className="dropbtn succes" type="submit">
-          Guardar
-        </button>
+        <div>
+          <button className="dropbtn succes" type="submit">
+            Guardar
+          </button>
+          <Link className="dropbtn danger" to="/users">
+            Regresar
+          </Link>
+        </div>
       </form>
     </div>
   );

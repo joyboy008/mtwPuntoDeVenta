@@ -2,39 +2,35 @@
 
 import { Fragment, Component } from "react";
 import Servicio from "./Servicio";
-import nosotros from "../assets/images/logo unias mila.png";
 import acrilicas from "../assets/images/unias.jpg";
-import gel from "../assets/images/gel.jpg";
 import pestañas from "../assets/images/lashes.jpg";
+import makeup from "../assets/images/makeup.jpg";
 
 class Servicios extends Component {
   state = {
     servicios: [
       {
-        titulo: "Nosotros",
+        titulo: "Nails",
         details:
-          "Somos un salón de belleza dedicado a resaltar tu estilo y confianza. Nos especializamos en el cuidado estético de manos y mirada, ofreciendo servicios de uñas acrílicas, uñas en gel y extensiones de pestañas. Nuestro compromiso es brindarte una experiencia relajante, profesional y con resultados que te hagan sentir hermosa y segura.",
-        image: nosotros,
-      },
-      {
-        titulo: "Uñas Acrílicas",
-        details:
-          "Realizamos diseños de uñas acrílicas personalizados, desde estilos elegantes y naturales hasta diseños modernos y llamativos. Utilizamos productos de alta calidad para garantizar durabilidad, resistencia y un acabado impecable.",
+          "Diseños que hablan por sí solos. Desde clásicos atemporales hasta arte en miniatura hecho para ti.",
         image: acrilicas,
+        tags: "Uñas · Diseño · Arte",
       },
       {
-        titulo: "Uñas en Gel",
+        titulo: "Make Up",
         details:
-          "Ofrecemos aplicación de uñas en gel con acabados brillantes y naturales. Ideales para quienes buscan un look delicado y duradero, nuestras técnicas aseguran un resultado ligero, flexible y de larga duración.",
-        image: gel,
+          "Realzamos tu belleza natural. Cada trazo, cada tono, pensado para que te veas y te sientas increíble.",
+        image: makeup,
+        tags: "Natural · Eventos · Glam",
       },
       {
-        titulo: "Extensiones de Pestañas",
+        titulo: "Lashes",
         details:
-          "Realzamos tu mirada con extensiones de pestañas (lashes) que se adaptan a tu estilo. Desde efecto natural hasta volumen ruso, trabajamos con precisión para lograr una apariencia hermosa, cómoda y duradera.",
+          "Pestañas que transforman tu mirada. Volumen, longitud y estilo que duran sin esfuerzo diario.",
         image: pestañas,
+        tags: "Volumen · Lifting · Extensiones",
       },
-    ]
+    ],
   };
 
   render() {
